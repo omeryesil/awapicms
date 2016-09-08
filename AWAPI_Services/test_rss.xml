@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0">
+  <channel site="AWAPI Site" sitelink="http://www.awapi.com" defaultculture="en" currentpostid="0" servertime="2010-05-02T19:08:24" blogid="7952774092851284232" pagesize="5" pageindex="0" numberofrecords="9" pagecount="2" search="">
+    <title>AWAPI Site - Comment List</title>
+    <link>http://www.awapi.com/</link>
+    <description>AWAPI Content in RSS 2.0 Feed Format</description>
+    <managingEditor>omer@awapi.com</managingEditor>
+    <category>comments</category>
+    <item>
+      <guid isPermaLink="false">7154026950714899536</guid>
+      <link>http://www.awapi.com/blog//blogpost.aspx?blogid=7952774092851284232&amp;postid=5156544634327415059</link>
+      <title>i have enjoyed readi</title>
+      <description>i have enjoyed reading thank for sharing your story Greeting. </description>
+      <a10:updated>2010-05-01T18:53:44-07:00</a10:updated>
+      <blogpostcommentid>7154026950714899536</blogpostcommentid>
+      <blogpostid>5156544634327415059</blogpostid>
+      <blogalias>omeryesil</blogalias>
+      <userfirstname>hermes</userfirstname>
+      <userlastname></userlastname>
+      <username>hermes_</username>
+      <createdate>2010-05-01T02:10:47.953</createdate>
+    </item>
+    <item>
+      <guid isPermaLink="false">9162902395503236482</guid>
+      <link>http://www.awapi.com/blog//blogpost.aspx?blogid=7952774092851284232&amp;postid=8929129516320024134</link>
+      <title>I've already bookmar</title>
+      <description>I've already bookmark this article and will definitely refer this article to all my close friends </description>
+      <a10:updated>2010-04-28T19:41:49-07:00</a10:updated>
+      <blogpostcommentid>9162902395503236482</blogpostcommentid>
+      <blogpostid>8929129516320024134</blogpostid>
+      <blogalias>omeryesil</blogalias>
+      <userfirstname>atlanta</userfirstname>
+      <userlastname></userlastname>
+      <username>atlanta</username>
+      <createdate>2010-04-28T08:39:06.877</createdate>
+    </item>
+    <item>
+      <guid isPermaLink="false">9077755410278482966</guid>
+      <link>http://www.awapi.com/blog//blogpost.aspx?blogid=7952774092851284232&amp;postid=8929129516320024134</link>
+      <title> i am happy to find </title>
+      <description> i am happy to find it thanks for sharing it here. Nice work. </description>
+      <a10:updated>2010-04-27T11:21:27-07:00</a10:updated>
+      <blogpostcommentid>9077755410278482966</blogpostcommentid>
+      <blogpostid>8929129516320024134</blogpostid>
+      <blogalias>omeryesil</blogalias>
+      <userfirstname>mulberry</userfirstname>
+      <userlastname></userlastname>
+      <username>mulberry</username>
+      <createdate>2010-04-24T09:13:53.623</createdate>
+    </item>
+    <item>
+      <guid isPermaLink="false">5492240207653692617</guid>
+      <link>http://www.awapi.com/blog//blogpost.aspx?blogid=7952774092851284232&amp;postid=8929129516320024134</link>
+      <title>Thanks for best news</title>
+      <description>Thanks for best news! </description>
+      <a10:updated>2010-04-27T11:21:49-07:00</a10:updated>
+      <blogpostcommentid>5492240207653692617</blogpostcommentid>
+      <blogpostid>8929129516320024134</blogpostid>
+      <blogalias>omeryesil</blogalias>
+      <userfirstname>nfljerseys</userfirstname>
+      <userlastname></userlastname>
+      <username>nfljerseys</username>
+      <createdate>2010-04-23T13:25:59.217</createdate>
+    </item>
+    <item>
+      <guid isPermaLink="false">8607228838398003133</guid>
+      <link>http://www.awapi.com/blog//blogpost.aspx?blogid=7952774092851284232&amp;postid=8929129516320024134</link>
+      <title>No problem </title>
+      <description>Your welcome, I believe you are studying at Colorado tech :) </description>
+      <a10:updated>2010-04-23T06:13:23-07:00</a10:updated>
+      <blogpostcommentid>8607228838398003133</blogpostcommentid>
+      <blogpostid>8929129516320024134</blogpostid>
+      <blogalias>omeryesil</blogalias>
+      <userid>1</userid>
+      <userfirstname>Omer</userfirstname>
+      <userlastname>Yesil</userlastname>
+      <username>omeryesil</username>
+      <createdate>2010-04-23T06:13:23.687</createdate>
+    </item>
+  </channel>
+</rss>

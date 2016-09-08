@@ -1,0 +1,20 @@
+﻿
+#designerContainer
+{
+	height: 220px; 
+	background-color: #ffffff; 
+	margin: 5px;
+	color:#000000;
+	font-family:Verdana;
+	font-size:9pt;
+	padding: 5px;
+}
+
+#designerEditorZone
+{
+	height: 145px; 
+	overflow: scroll;
+	width:400px;
+	background-color:#eeeeee;
+}
+

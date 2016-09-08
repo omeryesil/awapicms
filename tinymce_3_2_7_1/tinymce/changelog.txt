@@ -1,0 +1,9 @@
+Version 1.0a2 (2008-01-31)
+	Added support for Width and Height properties for the web control. Will be placed in style attribute on textarea.
+	Added possibility to skip the HttpHandler and ConfigSection and using the Web Control directly. Not recommended.
+	Fixed bug where gzip compression couldn't be disabled.
+	Fixed bug where empty class attributes where added to web control output.
+	Fixed bug where the scripts had the type attribute set to application-x/javascript and not text/javascript.
+	Removed TinyMCE from the package. To hard to maintain.
+Version 1.0a1 (2008-01-14)
+	First offical release, includes a WebControl, Spellchecker, Gzip compressor.

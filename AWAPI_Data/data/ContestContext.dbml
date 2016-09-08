@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Awapi" Class="ContestContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HBDCL-00168\SQLEXPRESS;Initial Catalog=Awapi;Integrated Security=True" SettingsObjectName="AWAPI_Data.Properties.Settings" SettingsPropertyName="AwapiConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.awContestGroup" Member="awContestGroups">
+    <Type Name="awContestGroup">
+      <Column Name="contestGroupId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="numberOfWinners" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pubDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pubEndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awContestGroup_awContestGroupMember" Member="awContestGroupMembers" ThisKey="contestGroupId" OtherKey="contestGroupId" Type="awContestGroupMember" />
+      <Association Name="awContestGroup_awContestWinner" Member="awContestWinners" ThisKey="contestGroupId" OtherKey="contestGroupId" Type="awContestWinner" />
+      <Association Name="awSite_Contest_awContestGroup" Member="awSite_Contest" ThisKey="siteId" OtherKey="siteId" Type="awSite_Contest" IsForeignKey="true" />
+      <Association Name="awUser_Contest_awContestGroup" Member="awUser_Contest" ThisKey="userId" OtherKey="userId" Type="awUser_Contest" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awContestGroupMember" Member="awContestGroupMembers">
+    <Type Name="awContestGroupMember">
+      <Column Name="contestGroupMemberId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="contestGroupId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="contestId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="awContestGroup_awContestGroupMember" Member="awContestGroup" ThisKey="contestGroupId" OtherKey="contestGroupId" Type="awContestGroup" IsForeignKey="true" />
+      <Association Name="awContest_awContestGroupMember" Member="awContest" ThisKey="contestId" OtherKey="contestId" Type="awContest" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awContestWinner" Member="awContestWinners">
+    <Type Name="awContestWinner">
+      <Column Name="contestWinnerId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="contestGroupId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="contestId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="winnerUserId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="imageUrl" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awContestGroup_awContestWinner" Member="awContestGroup" ThisKey="contestGroupId" OtherKey="contestGroupId" Type="awContestGroup" IsForeignKey="true" />
+      <Association Name="awUser_Contest_awContestWinner" Member="awUser" ThisKey="winnerUserId" OtherKey="userId" Type="awUser_Contest" IsForeignKey="true" />
+      <Association Name="awUser_Contest_awContestWinner1" Member="awUser_Contest" ThisKey="userId" OtherKey="userId" Type="awUser_Contest" IsForeignKey="true" />
+      <Association Name="awContest_awContestWinner" Member="awContest" ThisKey="contestId" OtherKey="contestId" Type="awContest" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awSite" Member="awSite_Contests">
+    <Type Name="awSite_Contest">
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="alias" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="cultureCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="link" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="imageurl" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="pubDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="maxBlogs" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maxUsers" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maxContents" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="accessKey" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="grantedDomains" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="bannedDomains" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="twitterUsername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="twitterPassword" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="awSite_Contest_awContestGroup" Member="awContestGroups" ThisKey="siteId" OtherKey="siteId" Type="awContestGroup" />
+      <Association Name="awSite_Contest_awContest" Member="awContests" ThisKey="siteId" OtherKey="siteId" Type="awContest" />
+      <Association Name="awUser_Contest_awSite_Contest" Member="awUser_Contest" ThisKey="userId" OtherKey="userId" Type="awUser_Contest" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awUser" Member="awUser_Contests">
+    <Type Name="awUser_Contest">
+      <Column Name="userId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="firstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="lastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="isSuperAdmin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="imageurl" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="link" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="birthday" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tel2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="state" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="postalcode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awUser_Contest_awContestGroup" Member="awContestGroups" ThisKey="userId" OtherKey="userId" Type="awContestGroup" />
+      <Association Name="awUser_Contest_awContestWinner" Member="awContestWinners" ThisKey="userId" OtherKey="winnerUserId" Type="awContestWinner" />
+      <Association Name="awUser_Contest_awContestWinner1" Member="awContestWinners1" ThisKey="userId" OtherKey="userId" Type="awContestWinner" />
+      <Association Name="awUser_Contest_awSite_Contest" Member="awSite_Contests" ThisKey="userId" OtherKey="userId" Type="awSite_Contest" />
+      <Association Name="awUser_Contest_awFile_Contest" Member="awFile_Contests" ThisKey="userId" OtherKey="userId" Type="awFile_Contest" />
+      <Association Name="awUser_Contest_awContestEntry" Member="awContestEntries" ThisKey="userId" OtherKey="userId" Type="awContestEntry" />
+      <Association Name="awUser_Contest_awContest" Member="awContests" ThisKey="userId" OtherKey="userId" Type="awContest" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awFile" Member="awFile_Contests">
+    <Type Name="awFile_Contest">
+      <Column Name="fileId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="path" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="thumbnail" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="contentType" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="contentSize" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="link" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pubDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isOnLocal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awFile_Contest_awContestEntry" Member="awContestEntries" ThisKey="fileId" OtherKey="fileId" Type="awContestEntry" />
+      <Association Name="awUser_Contest_awFile_Contest" Member="awUser_Contest" ThisKey="userId" OtherKey="userId" Type="awUser_Contest" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awContestEntry" Member="awContestEntries">
+    <Type Name="awContestEntry">
+      <Column Name="contestEntryId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="contestId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="cultureCode" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="firstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="fileId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="fileUrl" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="telType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="province" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="postalCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="country" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awFile_Contest_awContestEntry" Member="awFile_Contest" ThisKey="fileId" OtherKey="fileId" Type="awFile_Contest" IsForeignKey="true" DeleteRule="SET NULL" />
+      <Association Name="awUser_Contest_awContestEntry" Member="awUser_Contest" ThisKey="userId" OtherKey="userId" Type="awUser_Contest" IsForeignKey="true" />
+      <Association Name="awContest_awContestEntry" Member="awContest" ThisKey="contestId" OtherKey="contestId" Type="awContest" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awContest" Member="awContests">
+    <Type Name="awContest">
+      <Column Name="contestId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="maxEntry" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="entryPerUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="entryPerUserPeriodValue" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="entryPerUserPeriodType" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="numberOfWinners" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pubDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pubEndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="sendEmailToModeratorTemplateId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="sendEmailToModeratorRecipes" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="sendEmailAfterSubmissionTemplateId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="sendEmailAfterApproveEntryTemplateId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="sendEmailAfterDeleteEntryTemplateId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awContest_awContestGroupMember" Member="awContestGroupMembers" ThisKey="contestId" OtherKey="contestId" Type="awContestGroupMember" />
+      <Association Name="awContest_awContestWinner" Member="awContestWinners" ThisKey="contestId" OtherKey="contestId" Type="awContestWinner" />
+      <Association Name="awContest_awContestEntry" Member="awContestEntries" ThisKey="contestId" OtherKey="contestId" Type="awContestEntry" />
+      <Association Name="awSite_Contest_awContest" Member="awSite_Contest" ThisKey="siteId" OtherKey="siteId" Type="awSite_Contest" IsForeignKey="true" />
+      <Association Name="awUser_Contest_awContest" Member="awUser_Contest" ThisKey="userId" OtherKey="userId" Type="awUser_Contest" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Awapi" Class="FileContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HBDCL-00168\SQLEXPRESS;Initial Catalog=Awapi;Integrated Security=True" SettingsObjectName="AWAPI_Data.Properties.Settings" SettingsPropertyName="AwapiConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.awFileGroup" Member="awFileGroups">
+    <Type Name="awFileGroup">
+      <Column Name="fileGroupId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pubDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awFileGroup_awFileInGroup" Member="awFileInGroups" ThisKey="fileGroupId" OtherKey="fileGroupId" Type="awFileInGroup" />
+      <Association Name="awUser_File_awFileGroup" Member="awUser_File" ThisKey="userId" OtherKey="userId" Type="awUser_File" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awFileInGroup" Member="awFileInGroups">
+    <Type Name="awFileInGroup">
+      <Column Name="fileInGroupId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fileGroupId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="fileId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awFileGroup_awFileInGroup" Member="awFileGroup" ThisKey="fileGroupId" OtherKey="fileGroupId" Type="awFileGroup" IsForeignKey="true" />
+      <Association Name="awFile_awFileInGroup" Member="awFile" ThisKey="fileId" OtherKey="fileId" Type="awFile" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awUser" Member="awUser_Files">
+    <Type Name="awUser_File">
+      <Column Name="userId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="firstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="lastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="isSuperAdmin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="imageurl" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="link" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="birthday" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tel2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="state" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="postalcode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awUser_File_awFileGroup" Member="awFileGroups" ThisKey="userId" OtherKey="userId" Type="awFileGroup" />
+      <Association Name="awUser_File_awFile" Member="awFiles" ThisKey="userId" OtherKey="userId" Type="awFile" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awFile" Member="awFiles">
+    <Type Name="awFile">
+      <Column Name="fileId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="path" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="thumbnail" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="contentType" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="contentSize" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="link" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pubDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isOnLocal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awFile_awFileInGroup" Member="awFileInGroups" ThisKey="fileId" OtherKey="fileId" Type="awFileInGroup" />
+      <Association Name="awUser_File_awFile" Member="awUser_File" ThisKey="userId" OtherKey="userId" Type="awUser_File" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

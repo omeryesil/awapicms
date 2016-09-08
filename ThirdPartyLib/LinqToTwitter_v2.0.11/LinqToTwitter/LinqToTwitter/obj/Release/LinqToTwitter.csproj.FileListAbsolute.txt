@@ -1,0 +1,11 @@
+C:\Projects\AWAPI\ThirdPartyLib\LinqToTwitter_v2.0.11\LinqToTwitter\LinqToTwitter\bin\Release\LinqToTwitter.dll
+C:\Projects\AWAPI\ThirdPartyLib\LinqToTwitter_v2.0.11\LinqToTwitter\LinqToTwitter\bin\Release\LinqToTwitter.pdb
+C:\Projects\AWAPI\ThirdPartyLib\LinqToTwitter_v2.0.11\LinqToTwitter\LinqToTwitter\bin\Release\DotNetOpenAuth.dll
+C:\Projects\AWAPI\ThirdPartyLib\LinqToTwitter_v2.0.11\LinqToTwitter\LinqToTwitter\bin\Release\Kerr.Credentials.dll
+C:\Projects\AWAPI\ThirdPartyLib\LinqToTwitter_v2.0.11\LinqToTwitter\LinqToTwitter\bin\Release\System.Web.Mvc.dll
+C:\Projects\AWAPI\ThirdPartyLib\LinqToTwitter_v2.0.11\LinqToTwitter\LinqToTwitter\bin\Release\System.Web.Mvc.xml
+C:\Projects\AWAPI\ThirdPartyLib\LinqToTwitter_v2.0.11\LinqToTwitter\LinqToTwitter\bin\Release\DotNetOpenAuth.pdb
+C:\Projects\AWAPI\ThirdPartyLib\LinqToTwitter_v2.0.11\LinqToTwitter\LinqToTwitter\bin\Release\DotNetOpenAuth.xml
+C:\Projects\AWAPI\ThirdPartyLib\LinqToTwitter_v2.0.11\LinqToTwitter\LinqToTwitter\obj\Release\ResolveAssemblyReference.cache
+C:\Projects\AWAPI\ThirdPartyLib\LinqToTwitter_v2.0.11\LinqToTwitter\LinqToTwitter\obj\Release\LinqToTwitter.dll
+C:\Projects\AWAPI\ThirdPartyLib\LinqToTwitter_v2.0.11\LinqToTwitter\LinqToTwitter\obj\Release\LinqToTwitter.pdb

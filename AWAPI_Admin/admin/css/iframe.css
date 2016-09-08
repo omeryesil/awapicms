@@ -1,0 +1,120 @@
+/* main styles */
+body
+{
+    margin: auto;
+    padding: 0;
+    background: #BBD9EE;
+    color: #000;
+    font-family: tahoma,arial,sans-serif;
+    font-size: 11px;
+    
+}
+
+#main
+{
+    margin: 10px 10px auto 10px;
+    background-color: #ffffff;
+    min-height: 550px;
+    padding: 5px;
+}
+
+
+/* header */
+#header
+{
+    margin: 10px 10px auto 10px;
+    padding: 5px;
+    position: relative;
+    height: 30px;
+    background-color: #dcdcdc;
+}
+
+#top-bar
+{
+    padding: 0 0 0 9px;
+    margin: 0 0 4px 0; /*border-bottom: solid 1px #5f5f5f;*/
+}
+
+
+/* middle */
+#middle
+{
+    float: left;
+    width: 95%;
+    background-color: #ffffff;
+    padding: 0 13px 0 12px;
+}
+
+
+/* left column */
+#left-column
+{
+    float: left;
+    padding: 1px 0 0 0;
+    width: 220px;
+    border-right: solid 1px #dcdcdc;
+    min-height: 400px;
+}
+
+/* center column */
+#center-column
+{
+    float: left;
+    padding: 12px 16px 0 13px;
+}
+
+
+.textLong
+{
+    width: 300px;
+    border: solid 1px #acacac;
+    margin:2px;
+}
+
+.textMedium
+{
+    width: 150px;
+    border: solid 1px #acacac;
+    margin:2px;
+
+}
+
+.textShort
+{
+    width: 50px;
+    border: solid 1px #acacac;
+    margin:2px;
+
+}
+
+.textDescription
+{
+    width: 320px;
+    height: 50px;
+    border: solid 1px #acacac;
+}
+
+
+.msgError
+{
+    margin: 3px;
+    padding: 3px;
+    color: red;
+    float: right;
+}
+
+.msgInfo
+{
+    margin: 3px;
+    padding: 3px;
+    color: Green;
+    float: right;
+}
+
+.td_first
+{
+    vertical-align: top;
+    text-align: right;
+    white-space: nowrap;
+    min-width:100px;
+}

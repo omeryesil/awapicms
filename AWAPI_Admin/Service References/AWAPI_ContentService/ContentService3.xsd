@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:56624/wcf/ContentService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AWAPI_Data.CustomEntities" />
+  <xs:import schemaLocation="http://localhost:56624/wcf/ContentService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/AWAPI_Data.Data" />
+  <xs:element name="Get">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contentId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/AWAPI_Data.CustomEntities" minOccurs="0" name="GetResult" nillable="true" type="q1:ContentExtended" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="siteId" type="xs:long" />
+        <xs:element minOccurs="0" name="where" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sortField" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/AWAPI_Data.CustomEntities" minOccurs="0" name="GetListResult" nillable="true" type="q2:ArrayOfContentExtended" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contentId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Add">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contentType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="siteId" type="xs:long" />
+        <xs:element minOccurs="0" name="userId" type="xs:long" />
+        <xs:element minOccurs="0" name="parentContentId" type="xs:long" />
+        <xs:element minOccurs="0" name="eventStartDate" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="link" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="imageurl" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sortOrder" type="xs:int" />
+        <xs:element minOccurs="0" name="isEnabled" type="xs:boolean" />
+        <xs:element minOccurs="0" name="isCommentable" type="xs:boolean" />
+        <xs:element minOccurs="0" name="pubDate" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="pubEndDate" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Update">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:long" />
+        <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contentType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userId" type="xs:long" />
+        <xs:element minOccurs="0" name="parentContentId" type="xs:long" />
+        <xs:element minOccurs="0" name="eventStartDate" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="link" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="imageurl" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sortOrder" type="xs:int" />
+        <xs:element minOccurs="0" name="isEnabled" type="xs:boolean" />
+        <xs:element minOccurs="0" name="isCommentable" type="xs:boolean" />
+        <xs:element minOccurs="0" name="pubDate" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="pubEndDate" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetField">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fieldId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFieldResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/AWAPI_Data.Data" minOccurs="0" name="GetFieldResult" nillable="true" type="q3:awContentCustomField" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFieldList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contentId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFieldListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/AWAPI_Data.CustomEntities" minOccurs="0" name="GetFieldListResult" nillable="true" type="q4:ArrayOfContentCustomField" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveField">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/AWAPI_Data.Data" minOccurs="0" name="fld" nillable="true" type="q5:awContentCustomField" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveFieldResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveFieldResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteField">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fieldId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFieldResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFieldsByContentId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contentId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFieldsByContentIdResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFieldValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="valueId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFieldValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/AWAPI_Data.Data" minOccurs="0" name="GetFieldValueResult" nillable="true" type="q6:awContentCustomFieldValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFieldValueByContentId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contentId" type="xs:long" />
+        <xs:element minOccurs="0" name="fieldId" type="xs:int" />
+        <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFieldValueByContentIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/AWAPI_Data.Data" minOccurs="0" name="GetFieldValueByContentIdResult" nillable="true" type="q7:awContentCustomFieldValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFieldValueList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contentId" type="xs:long" />
+        <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFieldValueListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/AWAPI_Data.CustomEntities" minOccurs="0" name="GetFieldValueListResult" nillable="true" type="q8:ArrayOfContentCustomFieldValueExtended" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFieldValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contentId" type="xs:long" />
+        <xs:element minOccurs="0" name="fieldId" type="xs:int" />
+        <xs:element minOccurs="0" name="userId" type="xs:long" />
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFieldValueResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateFieldValueResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFieldValue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="valueId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFieldValueResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFieldValues">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fieldId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFieldValuesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFieldValuesByContentId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contentId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFieldValuesByContentIdResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

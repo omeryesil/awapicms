@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="AWAPI_Services.wcf.BlogService" CodeBehind="BlogService.svc.cs" %>

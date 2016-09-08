@@ -1,0 +1,42 @@
+﻿<div id="mainContent">
+  <div id='header'>
+    <div id='headerLeftColumn'>
+      <asp:WebPartZone ID="headerLeftZone" runat="server">
+        <ZoneTemplate>
+        </ZoneTemplate>
+      </asp:WebPartZone>
+    </div>
+    <div id='headerRightColumn'>
+      <asp:WebPartZone ID="headerRightZone" runat="server">
+        <ZoneTemplate>
+        </ZoneTemplate>
+      </asp:WebPartZone>
+    </div>
+  </div>
+  <div id='content'>
+    <div id='leftColumn'>
+      <asp:WebPartZone ID="leftColumnZone" runat="server">
+        <ZoneTemplate>
+        </ZoneTemplate>
+      </asp:WebPartZone>
+    </div>
+    <div id='centerColumn'>
+      <asp:WebPartZone ID="centerColumnZone" runat="server">
+        <ZoneTemplate>
+        </ZoneTemplate>
+      </asp:WebPartZone>
+    </div>
+    <div id='rightColumn'>
+      <asp:WebPartZone ID="rightColumnZone" runat="server">
+        <ZoneTemplate>
+        </ZoneTemplate>
+      </asp:WebPartZone>
+    </div>
+  </div>
+  <div id='footer'>
+    <asp:WebPartZone ID="footerZone" runat="server">
+      <ZoneTemplate>
+      </ZoneTemplate>
+    </asp:WebPartZone>
+  </div>
+</div>

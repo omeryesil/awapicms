@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<photos>
+	<!-- Plase your photos here -->
+	<photo desc="Picture is from stock.xchng" url="_pics/1.jpg" />
+	<photo desc="Picture is from stock.xchng" url="_pics/2.jpg" />
+</photos>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.875" name="FileContext">
+  <DataContextMoniker Name="/FileContextDataContext" />
+  <nestedChildShapes>
+    <classShape Id="1c5151ae-e4ac-4511-8e5d-ad6ca716007d" absoluteBounds="4.375, 1.125, 2, 2.0554226513703662">
+      <DataClassMoniker Name="/FileContextDataContext/awFileGroup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bd9e04ba-9eff-4e87-8f3e-2846ad5467f9" absoluteBounds="4.39, 1.585, 1.9700000000000002, 1.4954226513703663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e87b2b6e-9a1d-44cf-bbcb-84b3382e7d03" absoluteBounds="4.625, 4.625, 2, 1.4093236402670542">
+      <DataClassMoniker Name="/FileContextDataContext/awFileInGroup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0f4b9115-fe19-4277-b163-1a132fba3c0a" absoluteBounds="4.64, 5.085, 1.9700000000000002, 0.8493236402670542" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.71875 : 3.18042265137037); (5.71875 : 4.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FileContextDataContext/awFileGroup/awFileGroup_awFileInGroup" />
+      <nodes>
+        <classShapeMoniker Id="1c5151ae-e4ac-4511-8e5d-ad6ca716007d" />
+        <classShapeMoniker Id="e87b2b6e-9a1d-44cf-bbcb-84b3382e7d03" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="dd7956f2-6836-4f85-8f7a-59ff4af84a6d" absoluteBounds="2.25, 6, 2, 4.6398186957836156">
+      <DataClassMoniker Name="/FileContextDataContext/awUser_File" />
+      <nestedChildShapes>
+        <elementListCompartment Id="24f8e6ec-a0bd-4194-a8df-821cf16dc157" absoluteBounds="2.265, 6.46, 1.9700000000000002, 4.0798186957836151" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.90625 : 6); (3.90625 : 1.78125); (4.375 : 1.78125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FileContextDataContext/awUser_File/awUser_File_awFileGroup" />
+      <nodes>
+        <classShapeMoniker Id="dd7956f2-6836-4f85-8f7a-59ff4af84a6d" />
+        <classShapeMoniker Id="1c5151ae-e4ac-4511-8e5d-ad6ca716007d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f6fe2352-5e8c-41df-8f6d-cf8089fff4be" absoluteBounds="0.875, 1.625, 2, 3.1860959208011628">
+      <DataClassMoniker Name="/FileContextDataContext/awFile" />
+      <nestedChildShapes>
+        <elementListCompartment Id="94e3a379-4332-4e66-99f9-74d2617802bd" absoluteBounds="0.89000000000000012, 2.085, 1.9700000000000002, 2.6260959208011627" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.875 : 3.90270882568518); (3.82291666666667 : 3.90270882568518 : JumpStart); (3.98958333333333 : 3.90270882568518 : JumpEnd); (5.63541666666667 : 3.90270882568518 : JumpStart); (5.80208333333333 : 3.90270882568518 : JumpEnd); (6.53125 : 3.90270882568518); (6.53125 : 4.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FileContextDataContext/awFile/awFile_awFileInGroup" />
+      <nodes>
+        <classShapeMoniker Id="f6fe2352-5e8c-41df-8f6d-cf8089fff4be" />
+        <classShapeMoniker Id="e87b2b6e-9a1d-44cf-bbcb-84b3382e7d03" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5625 : 6); (2.5625 : 4.81109592080116)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FileContextDataContext/awUser_File/awUser_File_awFile" />
+      <nodes>
+        <classShapeMoniker Id="dd7956f2-6836-4f85-8f7a-59ff4af84a6d" />
+        <classShapeMoniker Id="f6fe2352-5e8c-41df-8f6d-cf8089fff4be" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

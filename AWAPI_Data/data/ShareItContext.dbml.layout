@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 8.75" name="ShareItContext">
+  <DataContextMoniker Name="/ShareItContextDataContext" />
+  <nestedChildShapes>
+    <classShape Id="07e2a8bc-3616-4884-9870-ca334991168e" absoluteBounds="9, 3.375, 2, 1.4093236402670542">
+      <DataClassMoniker Name="/ShareItContextDataContext/awShareItWith" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b6b58dbe-3e8b-417a-a46c-f43b7d23ace9" absoluteBounds="9.015, 3.835, 1.9700000000000002, 0.8493236402670542" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b68fbe6c-007f-446c-b660-f89b822ec066" absoluteBounds="0.5, 2, 2, 4.6398186957836147">
+      <DataClassMoniker Name="/ShareItContextDataContext/awUser_ShareIt" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6b7c8d71-e86d-49f0-bba9-d873547a1a95" absoluteBounds="0.51500000000000012, 2.46, 1.9700000000000002, 4.0798186957836151" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5f426971-d774-4bb2-9216-e0392bd84e2c" absoluteBounds="3.5, 5.375, 2, 3.1860959208011632">
+      <DataClassMoniker Name="/ShareItContextDataContext/awSite_ShareIt" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1a2884c5-5a4a-4b00-ab6f-a9ea2ad00baa" absoluteBounds="3.5150000005960464, 5.83500000089407, 1.9700000000000002, 2.6260959208011627" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 3.78125); (9 : 3.78125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ShareItContextDataContext/awUser_ShareIt/awUser_ShareIt_awShareItWith" />
+      <nodes>
+        <classShapeMoniker Id="b68fbe6c-007f-446c-b660-f89b822ec066" />
+        <classShapeMoniker Id="07e2a8bc-3616-4884-9870-ca334991168e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 6.00740934789181); (3.5 : 6.00740934789181)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ShareItContextDataContext/awUser_ShareIt/awUser_ShareIt_awSite_ShareIt" />
+      <nodes>
+        <classShapeMoniker Id="b68fbe6c-007f-446c-b660-f89b822ec066" />
+        <classShapeMoniker Id="5f426971-d774-4bb2-9216-e0392bd84e2c" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f347eb8c-815a-4340-90b4-776745e2c7a6" absoluteBounds="6, 4.25, 2, 2.0554226513703657">
+      <DataClassMoniker Name="/ShareItContextDataContext/awShareIt" />
+      <nestedChildShapes>
+        <elementListCompartment Id="382cc42a-4435-4128-977d-b251436318a3" absoluteBounds="6.015, 4.71, 1.9700000000000002, 1.4954226513703663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8 : 4.51716182013353); (9 : 4.51716182013353)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ShareItContextDataContext/awShareIt/awShareIt_awShareItWith" />
+      <nodes>
+        <classShapeMoniker Id="f347eb8c-815a-4340-90b4-776745e2c7a6" />
+        <classShapeMoniker Id="07e2a8bc-3616-4884-9870-ca334991168e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.84021132568518); (6 : 5.84021132568518)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ShareItContextDataContext/awSite_ShareIt/awSite_ShareIt_awShareIt" />
+      <nodes>
+        <classShapeMoniker Id="5f426971-d774-4bb2-9216-e0392bd84e2c" />
+        <classShapeMoniker Id="f347eb8c-815a-4340-90b4-776745e2c7a6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 4.78125); (6 : 4.78125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ShareItContextDataContext/awUser_ShareIt/awUser_ShareIt_awShareIt" />
+      <nodes>
+        <classShapeMoniker Id="b68fbe6c-007f-446c-b660-f89b822ec066" />
+        <classShapeMoniker Id="f347eb8c-815a-4340-90b4-776745e2c7a6" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

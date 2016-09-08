@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Awapi" Class="PollContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=OMER-PC;Initial Catalog=AWAPI;User ID=sa" SettingsObjectName="AWAPI_Data.Properties.Settings" SettingsPropertyName="AWAPIConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.awSite" Member="awSite_Polls">
+    <Type Name="awSite_Poll">
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="alias" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="cultureCode" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="link" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="imageurl" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pubDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="maxBlogs" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maxUsers" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maxContents" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="accessKey" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="grantedDomains" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="bannedDomains" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="awSite_Poll_awPoll" Member="awPolls" ThisKey="siteId" OtherKey="siteId" Type="awPoll" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awPoll" Member="awPolls">
+    <Type Name="awPoll">
+      <Column Name="pollId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="answeredQuestion" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isPublic" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isMultipleChoice" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="pubDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pubEndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awPoll_awPollChoice" Member="awPollChoices" ThisKey="pollId" OtherKey="pollId" Type="awPollChoice" />
+      <Association Name="awSite_Poll_awPoll" Member="awSite_Poll" ThisKey="siteId" OtherKey="siteId" Type="awSite_Poll" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awPollChoice" Member="awPollChoices">
+    <Type Name="awPollChoice">
+      <Column Name="pollChoiceId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pollId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="numberOfVotes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awPoll_awPollChoice" Member="awPoll" ThisKey="pollId" OtherKey="pollId" Type="awPoll" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

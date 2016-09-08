@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E0548E6A-FEEF-4C08-97EE-B6F5BD3A033E}"
+	ProjectSection(SolutionItems) = preProject
+		AWAPI.vsmdi = AWAPI.vsmdi
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWAPI_Data", "AWAPI_Data\AWAPI_Data.csproj", "{0C95DA98-13DC-4C51-A1C7-A25001299742}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWAPI_Services", "AWAPI_Services\AWAPI_Services.csproj", "{72C41E6B-347A-4E6A-8E0A-92CE52EB679F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWAPI_BusinessLibrary", "AWAPI_BusinessLibrary\AWAPI_BusinessLibrary.csproj", "{03415398-DF9B-44C9-8B56-C77FCDD653F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWAPI_Common", "AWAPI_Common\AWAPI_Common.csproj", "{E6BF8D10-E385-4521-A40E-40C383BEC373}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWAPI_ControlLib", "AWAPI_ControlLib\AWAPI_ControlLib.csproj", "{FD9F07C9-D750-455D-8884-56ABA4F033B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWAPI_Admin", "AWAPI_Admin\AWAPI_Admin.csproj", "{2A3F50E9-3709-4F94-85C2-C8BF72653F73}"
+	ProjectSection(ProjectDependencies) = postProject
+		{72C41E6B-347A-4E6A-8E0A-92CE52EB679F} = {72C41E6B-347A-4E6A-8E0A-92CE52EB679F}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyMCE", "tinymce_3_2_7_1\tinymce\src\csharp\TinyMCE.csproj", "{37C82B46-603B-4849-AEF1-24A096D6807F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Awapi_Test", "Awapi_Test\Awapi_Test.csproj", "{990EF8DA-FC64-4474-92D2-ABE71D15CCF6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C95DA98-13DC-4C51-A1C7-A25001299742}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C95DA98-13DC-4C51-A1C7-A25001299742}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C95DA98-13DC-4C51-A1C7-A25001299742}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C95DA98-13DC-4C51-A1C7-A25001299742}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72C41E6B-347A-4E6A-8E0A-92CE52EB679F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72C41E6B-347A-4E6A-8E0A-92CE52EB679F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72C41E6B-347A-4E6A-8E0A-92CE52EB679F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72C41E6B-347A-4E6A-8E0A-92CE52EB679F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03415398-DF9B-44C9-8B56-C77FCDD653F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03415398-DF9B-44C9-8B56-C77FCDD653F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03415398-DF9B-44C9-8B56-C77FCDD653F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03415398-DF9B-44C9-8B56-C77FCDD653F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6BF8D10-E385-4521-A40E-40C383BEC373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6BF8D10-E385-4521-A40E-40C383BEC373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6BF8D10-E385-4521-A40E-40C383BEC373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6BF8D10-E385-4521-A40E-40C383BEC373}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD9F07C9-D750-455D-8884-56ABA4F033B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD9F07C9-D750-455D-8884-56ABA4F033B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD9F07C9-D750-455D-8884-56ABA4F033B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD9F07C9-D750-455D-8884-56ABA4F033B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A3F50E9-3709-4F94-85C2-C8BF72653F73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A3F50E9-3709-4F94-85C2-C8BF72653F73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A3F50E9-3709-4F94-85C2-C8BF72653F73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A3F50E9-3709-4F94-85C2-C8BF72653F73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37C82B46-603B-4849-AEF1-24A096D6807F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37C82B46-603B-4849-AEF1-24A096D6807F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37C82B46-603B-4849-AEF1-24A096D6807F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37C82B46-603B-4849-AEF1-24A096D6807F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{990EF8DA-FC64-4474-92D2-ABE71D15CCF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{990EF8DA-FC64-4474-92D2-ABE71D15CCF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{990EF8DA-FC64-4474-92D2-ABE71D15CCF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{990EF8DA-FC64-4474-92D2-ABE71D15CCF6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = 
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = AWAPI.vsmdi
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,12 @@
+C:\Projects\AWAPI\AWAPI_Data\bin\Debug\AWAPI_Data.dll.config
+C:\Projects\AWAPI\AWAPI_Data\bin\Debug\AWAPI_Data.dll
+C:\Projects\AWAPI\AWAPI_Data\bin\Debug\AWAPI_Data.pdb
+C:\Projects\AWAPI\AWAPI_Data\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\AWAPI\AWAPI_Data\obj\Debug\AWAPI_Data.dll
+C:\Projects\AWAPI\AWAPI_Data\obj\Debug\AWAPI_Data.pdb
+D:\Projects\AWAPI\AWAPI_Data\bin\Debug\AWAPI_Data.dll.config
+D:\Projects\AWAPI\AWAPI_Data\bin\Debug\AWAPI_Data.dll
+D:\Projects\AWAPI\AWAPI_Data\bin\Debug\AWAPI_Data.pdb
+D:\Projects\AWAPI\AWAPI_Data\obj\Debug\AWAPI_Data.csprojResolveAssemblyReference.cache
+D:\Projects\AWAPI\AWAPI_Data\obj\Debug\AWAPI_Data.dll
+D:\Projects\AWAPI\AWAPI_Data\obj\Debug\AWAPI_Data.pdb

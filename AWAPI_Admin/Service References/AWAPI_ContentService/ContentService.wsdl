@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://tempuri.org/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="ContentService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:56624/wcf/ContentService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:56624/wcf/ContentService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:56624/wcf/ContentService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AWAPI_Data.CustomEntities" />
+      <xsd:import schemaLocation="http://localhost:56624/wcf/ContentService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/AWAPI_Data.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IContentService_Get_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_Get_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetList" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:Add" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_GetField_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetField" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_GetField_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFieldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_GetFieldList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFieldList" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_GetFieldList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFieldListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_SaveField_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveField" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_SaveField_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveFieldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_DeleteField_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteField" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_DeleteField_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFieldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_DeleteFieldsByContentId_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFieldsByContentId" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_DeleteFieldsByContentId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFieldsByContentIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_GetFieldValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFieldValue" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_GetFieldValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFieldValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_GetFieldValueByContentId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFieldValueByContentId" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_GetFieldValueByContentId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFieldValueByContentIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_GetFieldValueList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFieldValueList" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_GetFieldValueList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFieldValueListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_UpdateFieldValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFieldValue" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_UpdateFieldValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFieldValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_DeleteFieldValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFieldValue" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_DeleteFieldValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFieldValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_DeleteFieldValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFieldValues" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_DeleteFieldValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFieldValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_DeleteFieldValuesByContentId_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFieldValuesByContentId" />
+  </wsdl:message>
+  <wsdl:message name="IContentService_DeleteFieldValuesByContentId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFieldValuesByContentIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IContentService">
+    <wsdl:operation name="Get">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentService/Get" message="tns:IContentService_Get_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentService/GetResponse" message="tns:IContentService_Get_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentService/GetList" message="tns:IContentService_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentService/GetListResponse" message="tns:IContentService_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentService/Delete" message="tns:IContentService_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentService/DeleteResponse" message="tns:IContentService_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentService/Add" message="tns:IContentService_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentService/AddResponse" message="tns:IContentService_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentService/Update" message="tns:IContentService_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentService/UpdateResponse" message="tns:IContentService_Update_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetField">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentService/GetField" message="tns:IContentService_GetField_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentService/GetFieldResponse" message="tns:IContentService_GetField_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentService/GetFieldList" message="tns:IContentService_GetFieldList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentService/GetFieldListResponse" message="tns:IContentService_GetFieldList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveField">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentService/SaveField" message="tns:IContentService_SaveField_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentService/SaveFieldResponse" message="tns:IContentService_SaveField_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteField">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentService/DeleteField" message="tns:IContentService_DeleteField_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentService/DeleteFieldResponse" message="tns:IContentService_DeleteField_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFieldsByContentId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentService/DeleteFieldsByContentId" message="tns:IContentService_DeleteFieldsByContentId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentService/DeleteFieldsByContentIdResponse" message="tns:IContentService_DeleteFieldsByContentId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentService/GetFieldValue" message="tns:IContentService_GetFieldValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentService/GetFieldValueResponse" message="tns:IContentService_GetFieldValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldValueByContentId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentService/GetFieldValueByContentId" message="tns:IContentService_GetFieldValueByContentId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentService/GetFieldValueByContentIdResponse" message="tns:IContentService_GetFieldValueByContentId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldValueList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentService/GetFieldValueList" message="tns:IContentService_GetFieldValueList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentService/GetFieldValueListResponse" message="tns:IContentService_GetFieldValueList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFieldValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentService/UpdateFieldValue" message="tns:IContentService_UpdateFieldValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentService/UpdateFieldValueResponse" message="tns:IContentService_UpdateFieldValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFieldValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentService/DeleteFieldValue" message="tns:IContentService_DeleteFieldValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentService/DeleteFieldValueResponse" message="tns:IContentService_DeleteFieldValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFieldValues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentService/DeleteFieldValues" message="tns:IContentService_DeleteFieldValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentService/DeleteFieldValuesResponse" message="tns:IContentService_DeleteFieldValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFieldValuesByContentId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IContentService/DeleteFieldValuesByContentId" message="tns:IContentService_DeleteFieldValuesByContentId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IContentService/DeleteFieldValuesByContentIdResponse" message="tns:IContentService_DeleteFieldValuesByContentId_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="basicHttp_ContentService" type="tns:IContentService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Get">
+      <soap:operation soapAction="http://tempuri.org/IContentService/Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetList">
+      <soap:operation soapAction="http://tempuri.org/IContentService/GetList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/IContentService/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <soap:operation soapAction="http://tempuri.org/IContentService/Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://tempuri.org/IContentService/Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetField">
+      <soap:operation soapAction="http://tempuri.org/IContentService/GetField" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldList">
+      <soap:operation soapAction="http://tempuri.org/IContentService/GetFieldList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveField">
+      <soap:operation soapAction="http://tempuri.org/IContentService/SaveField" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteField">
+      <soap:operation soapAction="http://tempuri.org/IContentService/DeleteField" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFieldsByContentId">
+      <soap:operation soapAction="http://tempuri.org/IContentService/DeleteFieldsByContentId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldValue">
+      <soap:operation soapAction="http://tempuri.org/IContentService/GetFieldValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldValueByContentId">
+      <soap:operation soapAction="http://tempuri.org/IContentService/GetFieldValueByContentId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldValueList">
+      <soap:operation soapAction="http://tempuri.org/IContentService/GetFieldValueList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFieldValue">
+      <soap:operation soapAction="http://tempuri.org/IContentService/UpdateFieldValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFieldValue">
+      <soap:operation soapAction="http://tempuri.org/IContentService/DeleteFieldValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFieldValues">
+      <soap:operation soapAction="http://tempuri.org/IContentService/DeleteFieldValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFieldValuesByContentId">
+      <soap:operation soapAction="http://tempuri.org/IContentService/DeleteFieldValuesByContentId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ContentService">
+    <wsdl:port name="basicHttp_ContentService" binding="tns:basicHttp_ContentService">
+      <soap:address location="http://localhost:56624/wcf/ContentService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

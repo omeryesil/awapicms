@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AWAPI_Data.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AWAPI_Data.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="awContentCustomField">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="applyToSubContents" type="xs:boolean" />
+      <xs:element minOccurs="0" name="awContent" nillable="true" type="tns:awContent" />
+      <xs:element minOccurs="0" name="awContentCustomFieldValues" nillable="true" type="tns:ArrayOfawContentCustomFieldValue" />
+      <xs:element minOccurs="0" name="contentId" type="xs:long" />
+      <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="customFieldId" type="xs:long" />
+      <xs:element minOccurs="0" name="defaultValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fieldType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="isEnabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="lastBuildDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="maximumLength" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="maximumValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="minimumValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="regularExpression" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sortOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="awContentCustomField" nillable="true" type="tns:awContentCustomField" />
+  <xs:complexType name="awContent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="awContentCultures" nillable="true" type="tns:ArrayOfawContentCulture" />
+      <xs:element minOccurs="0" name="awContentCustomFields" nillable="true" type="tns:ArrayOfawContentCustomField" />
+      <xs:element minOccurs="0" name="awSiteTaggedContents" nillable="true" type="tns:ArrayOfawSiteTaggedContent" />
+      <xs:element minOccurs="0" name="awSite_" nillable="true" type="tns:awSite_" />
+      <xs:element minOccurs="0" name="contentId" type="xs:long" />
+      <xs:element minOccurs="0" name="contentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eventEndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="eventStartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="imageurl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="isCommentable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="isEnabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="lastBuildDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="lineage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="link" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parentContentId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="pubDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="pubEndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="siteId" type="xs:long" />
+      <xs:element minOccurs="0" name="sortOrder" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="awContent" nillable="true" type="tns:awContent" />
+  <xs:complexType name="ArrayOfawContentCulture">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="awContentCulture" nillable="true" type="tns:awContentCulture" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfawContentCulture" nillable="true" type="tns:ArrayOfawContentCulture" />
+  <xs:complexType name="awContentCulture">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="awContent" nillable="true" type="tns:awContent" />
+      <xs:element minOccurs="0" name="contentCultureId" type="xs:long" />
+      <xs:element minOccurs="0" name="contentId" type="xs:long" />
+      <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="imageurl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="link" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="awContentCulture" nillable="true" type="tns:awContentCulture" />
+  <xs:complexType name="ArrayOfawContentCustomField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="awContentCustomField" nillable="true" type="tns:awContentCustomField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfawContentCustomField" nillable="true" type="tns:ArrayOfawContentCustomField" />
+  <xs:complexType name="ArrayOfawSiteTaggedContent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="awSiteTaggedContent" nillable="true" type="tns:awSiteTaggedContent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfawSiteTaggedContent" nillable="true" type="tns:ArrayOfawSiteTaggedContent" />
+  <xs:complexType name="awSiteTaggedContent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="awContent" nillable="true" type="tns:awContent" />
+      <xs:element minOccurs="0" name="awSiteTag" nillable="true" type="tns:awSiteTag" />
+      <xs:element minOccurs="0" name="contentId" type="xs:long" />
+      <xs:element minOccurs="0" name="siteTagId" type="xs:long" />
+      <xs:element minOccurs="0" name="siteTaggedContentId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="awSiteTaggedContent" nillable="true" type="tns:awSiteTaggedContent" />
+  <xs:complexType name="awSiteTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="awSiteTaggedContents" nillable="true" type="tns:ArrayOfawSiteTaggedContent" />
+      <xs:element minOccurs="0" name="awSite_" nillable="true" type="tns:awSite_" />
+      <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="siteId" type="xs:long" />
+      <xs:element minOccurs="0" name="siteTagId" type="xs:long" />
+      <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="awSiteTag" nillable="true" type="tns:awSiteTag" />
+  <xs:complexType name="awSite_">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="awContents" nillable="true" type="tns:ArrayOfawContent" />
+      <xs:element minOccurs="0" name="awSiteTags" nillable="true" type="tns:ArrayOfawSiteTag" />
+      <xs:element minOccurs="0" name="createDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="imageurl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="isEnabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="lastBuildDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="link" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="maxBlogs" type="xs:int" />
+      <xs:element minOccurs="0" name="maxContents" type="xs:int" />
+      <xs:element minOccurs="0" name="maxUsers" type="xs:int" />
+      <xs:element minOccurs="0" name="pubDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="siteId" type="xs:long" />
+      <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="awSite_" nillable="true" type="tns:awSite_" />
+  <xs:complexType name="ArrayOfawContent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="awContent" nillable="true" type="tns:awContent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfawContent" nillable="true" type="tns:ArrayOfawContent" />
+  <xs:complexType name="ArrayOfawSiteTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="awSiteTag" nillable="true" type="tns:awSiteTag" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfawSiteTag" nillable="true" type="tns:ArrayOfawSiteTag" />
+  <xs:complexType name="ArrayOfawContentCustomFieldValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="awContentCustomFieldValue" nillable="true" type="tns:awContentCustomFieldValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfawContentCustomFieldValue" nillable="true" type="tns:ArrayOfawContentCustomFieldValue" />
+  <xs:complexType name="awContentCustomFieldValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="awContentCustomField" nillable="true" type="tns:awContentCustomField" />
+      <xs:element minOccurs="0" name="contentId" type="xs:long" />
+      <xs:element minOccurs="0" name="createDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="cultureCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="customFieldId" type="xs:long" />
+      <xs:element minOccurs="0" name="customFieldValueId" type="xs:long" />
+      <xs:element minOccurs="0" name="fieldValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lastBuildDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="userId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="awContentCustomFieldValue" nillable="true" type="tns:awContentCustomFieldValue" />
+</xs:schema>

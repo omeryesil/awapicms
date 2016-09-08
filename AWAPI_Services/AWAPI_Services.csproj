@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{72C41E6B-347A-4E6A-8E0A-92CE52EB679F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AWAPI_Services</RootNamespace>
+    <AssemblyName>AWAPI_Services</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK, Version=1.0.6.1, Culture=neutral, PublicKeyToken=cd2d24cd2bace800, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdPartyLib\AWSSDK.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LinqToTwitter, Version=2.0.11.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json.Net20, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdPartyLib\Newtonsoft.Json.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="PostSharp.Laos, Version=1.0.10.403, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL" />
+    <Reference Include="PostSharp.Public, Version=1.0.10.385, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="wcf\ContentService.svc" />
+    <Content Include="wcf\UserService.svc" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="handler\BaseHandler.cs" />
+    <Compile Include="handler\bloghandler.ashx.cs">
+      <DependentUpon>bloghandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\contenthandler.ashx.cs">
+      <DependentUpon>contenthandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\automatedtask.ashx.cs">
+      <DependentUpon>automatedtask.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\contesthandler.ashx.cs">
+      <DependentUpon>contesthandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\pollhandler.ashx.cs">
+      <DependentUpon>pollhandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\filehandler.ashx.cs">
+      <DependentUpon>filehandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\twitterhandler.ashx.cs">
+      <DependentUpon>twitterhandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\weatherhandler.ashx.cs">
+      <DependentUpon>weatherhandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ObfuscationSettings.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecurityAspect.cs" />
+    <Compile Include="wcf\AwapiFaultException.cs" />
+    <Compile Include="wcf\BlogService.svc.cs">
+      <DependentUpon>BlogService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="wcf\ContentService.svc.cs">
+      <DependentUpon>ContentService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="wcf\ContestService.svc.cs">
+      <DependentUpon>ContestService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="wcf\FileService.svc.cs">
+      <DependentUpon>FileService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="wcf\IBlogService.cs" />
+    <Compile Include="wcf\IContentService.cs" />
+    <Compile Include="wcf\IContestService.cs" />
+    <Compile Include="wcf\IFileService.cs" />
+    <Compile Include="wcf\IPollService.cs" />
+    <Compile Include="wcf\ISiteService.cs" />
+    <Compile Include="wcf\IUserService.cs" />
+    <Compile Include="wcf\PollService.svc.cs">
+      <DependentUpon>PollService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="wcf\SendEmailToConenders.aspx.cs">
+      <DependentUpon>SendEmailToConenders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wcf\SendEmailToConenders.aspx.designer.cs">
+      <DependentUpon>SendEmailToConenders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wcf\UserService.svc.cs">
+      <DependentUpon>UserService.svc</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="handler\filehandler.ashx" />
+    <Content Include="wcf\FileService.svc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="handler\contenthandler.ashx" />
+    <Content Include="test_atom.xml" />
+    <Content Include="test_rss.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AWAPI_BusinessLibrary\AWAPI_BusinessLibrary.csproj">
+      <Project>{03415398-DF9B-44C9-8B56-C77FCDD653F1}</Project>
+      <Name>AWAPI_BusinessLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AWAPI_Common\AWAPI_Common.csproj">
+      <Project>{E6BF8D10-E385-4521-A40E-40C383BEC373}</Project>
+      <Name>AWAPI_Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AWAPI_Data\AWAPI_Data.csproj">
+      <Project>{0C95DA98-13DC-4C51-A1C7-A25001299742}</Project>
+      <Name>AWAPI_Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="handler\bloghandler.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="handler\weatherhandler.ashx" />
+    <Content Include="wcf\BlogService.svc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="handler\twitterhandler.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="crossdomain.xml" />
+    <Content Include="handler\pollhandler.ashx" />
+    <Content Include="img\imageNotAvailable.jpg" />
+    <Content Include="wcf\ContestService.svc" />
+    <Content Include="wcf\PollService.svc" />
+    <Content Include="wcf\SendEmailToConenders.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="handler\automatedtask.ashx" />
+    <Content Include="MIMEContentTypes.xml" />
+    <Content Include="robots.txt" />
+    <Content Include="utilities\ffmpeg\ffmpeg.exe" />
+    <Content Include="utilities\ffmpeg\pthreadGC2.dll" />
+    <Content Include="utilities\ffmpeg\SDL.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ExternalLib\DotNetOpenAuth.dll" />
+    <Content Include="ExternalLib\Kerr.Credentials.dll" />
+    <Content Include="ExternalLib\LinqToTwitter.dll" />
+    <Content Include="ExternalLib\PostSharp.Laos.dll" />
+    <Content Include="ExternalLib\PostSharp.Public.dll" />
+    <Content Include="GenericErrorPage.htm" />
+    <Content Include="handler\contesthandler.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>56624</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

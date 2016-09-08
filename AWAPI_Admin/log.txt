@@ -1,0 +1,3 @@
+MAIL ERROR ---------------------
+SMTP:
+ERROR:The SMTP host was not specified.

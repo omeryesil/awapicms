@@ -1,0 +1,8 @@
+tocTab[tocTab.length] = new Array("1.2.1:1", "", "Awapi Control Library", "EARoot/EA1/EA2/EA1/EA44.htm", "175.png", "11", "0", "", "Logical diagram0","{00D31AE9-564B-4f94-A4F9-72B57A156664}");
+tocTab[tocTab.length] = new Array("1.2.1:2", "", "Blog", "EARoot/EA1/EA2/EA1/EA50.htm", "5.png", "43", "0", "", "Class0","{C6737205-9A5C-4354-A10E-3189C3E942FB}");
+tocTab[tocTab.length] = new Array("1.2.1:3", "", "Content", "EARoot/EA1/EA2/EA1/EA51.htm", "5.png", "44", "0", "", "Class0","{5D68A107-06BD-4fe9-BA89-D42B61ABBB8F}");
+tocTab[tocTab.length] = new Array("1.2.1:4", "", "ContentLabel", "EARoot/EA1/EA2/EA1/EA52.htm", "5.png", "45", "0", "", "Class0","{FBDBE7F1-DB80-4709-978C-1E87A00CD29B}");
+tocTab[tocTab.length] = new Array("1.2.1:5", "", "Poll", "EARoot/EA1/EA2/EA1/EA54.htm", "5.png", "46", "0", "", "Class0","{7CCD7938-FD16-42f6-8B8F-63DE320BC8B1}");
+tocTab[tocTab.length] = new Array("1.2.1:6", "", "XslFunctions", "EARoot/EA1/EA2/EA1/EA56.htm", "5.png", "47", "0", "", "Class0","{4BF978AB-2F83-47e6-9E95-913A447EC3F5}");
+tocTab[tocTab.length] = new Array("1.2.1:7", "", "XslTransformation", "EARoot/EA1/EA2/EA1/EA57.htm", "5.png", "50", "0", "", "Class0","{84AD57D3-1B17-424b-907A-244BB970C4F3}");
+tocTab[tocTab.length] = new Array("1.2.1.1", "1", "Blog", "EARoot/EA1/EA2/EA1/EA49.htm", "4.png", "", "", "{A330A77B-6498-48de-B28A-C4E695C5DE67}", "Package");

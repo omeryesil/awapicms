@@ -1,0 +1,10 @@
+tocTab[tocTab.length] = new Array("1.2.1.1.1:1", "", "GetArchivedPostList", "EARoot/EA1/EA2/EA1/EA1/EA1/EA74.htm", "175.png", "23", "0", "", "Logical diagram0","{676B4150-B031-4dd1-8F82-5AE89581367F}");
+tocTab[tocTab.length] = new Array("1.2.1.1.1:2", "", "GetArchiveList", "EARoot/EA1/EA2/EA1/EA1/EA1/EA76.htm", "175.png", "22", "0", "", "Logical diagram0","{6B5B5788-BB8C-4dcd-9880-28E2EB1B043A}");
+tocTab[tocTab.length] = new Array("1.2.1.1.1:3", "", "GetBlog", "EARoot/EA1/EA2/EA1/EA1/EA1/EA78.htm", "175.png", "24", "0", "", "Logical diagram0","{1AB151C9-9D50-4854-82EA-8F6F6BAFF2CF}");
+tocTab[tocTab.length] = new Array("1.2.1.1.1:4", "", "GetBlogList", "EARoot/EA1/EA2/EA1/EA1/EA1/EA80.htm", "175.png", "25", "0", "", "Logical diagram0","{A110AF7D-9478-474f-9ECC-B6178A28485D}");
+tocTab[tocTab.length] = new Array("1.2.1.1.1:5", "", "GetCategoryList", "EARoot/EA1/EA2/EA1/EA1/EA1/EA82.htm", "175.png", "26", "0", "", "Logical diagram0","{56231F5A-1357-40ae-8C8D-B8925CD35EAE}");
+tocTab[tocTab.length] = new Array("1.2.1.1.1:6", "", "GetCommentList", "EARoot/EA1/EA2/EA1/EA1/EA1/EA84.htm", "175.png", "30", "0", "", "Logical diagram0","{006E705D-10CE-43d4-B564-BD9386A9D72F}");
+tocTab[tocTab.length] = new Array("1.2.1.1.1:7", "", "GetPost", "EARoot/EA1/EA2/EA1/EA1/EA1/EA86.htm", "175.png", "21", "0", "", "Logical diagram0","{762729C5-77A4-4b94-A6E1-10DF011BFD8B}");
+tocTab[tocTab.length] = new Array("1.2.1.1.1:8", "", "GetPostFileList", "EARoot/EA1/EA2/EA1/EA1/EA1/EA88.htm", "175.png", "29", "0", "", "Logical diagram0","{EA96E24A-467F-46b5-8452-9999269FA125}");
+tocTab[tocTab.length] = new Array("1.2.1.1.1:9", "", "GetPostList", "EARoot/EA1/EA2/EA1/EA1/EA1/EA90.htm", "175.png", "28", "0", "", "Logical diagram0","{D006B588-0A70-4293-8799-8EAD9A71C620}");
+tocTab[tocTab.length] = new Array("1.2.1.1.1:10", "", "GetTagList", "EARoot/EA1/EA2/EA1/EA1/EA1/EA92.htm", "175.png", "31", "0", "", "Logical diagram0","{B0EE6B1B-0D0E-4e1c-9C25-1CDE0A8E6CFF}");

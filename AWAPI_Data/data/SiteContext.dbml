@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Awapi" Class="SiteContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=OMER-PC;Initial Catalog=AWAPI;User ID=sa" SettingsObjectName="AWAPI_Data.Properties.Settings" SettingsPropertyName="AWAPIConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.awSiteDomainSecurity" Member="awSiteDomainSecurities">
+    <Type Name="awSiteDomainSecurity">
+      <Column Name="siteDomainFilterId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="domainAddress" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="allowRead" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="allowUpdate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="allowCreate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="allowDelete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awUser_awSiteDomainSecurity" Member="awUser" ThisKey="userId" OtherKey="userId" Type="awUser" IsForeignKey="true" />
+      <Association Name="awSite_awSiteDomainSecurity" Member="awSite" ThisKey="siteId" OtherKey="siteId" Type="awSite" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awRoleMember" Member="awRoleMembers">
+    <Type Name="awRoleMember">
+      <Column Name="roleMemberId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="roleId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="awRole_awRoleMember" Member="awRole" ThisKey="roleId" OtherKey="roleId" Type="awRole" IsForeignKey="true" />
+      <Association Name="awUser_awRoleMember" Member="awUser" ThisKey="userId" OtherKey="userId" Type="awUser" IsForeignKey="true" />
+      <Association Name="awSite_awRoleMember" Member="awSite" ThisKey="siteId" OtherKey="siteId" Type="awSite" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awCulture" Member="awCultures">
+    <Type Name="awCulture">
+      <Column Name="cultureCode" Type="System.String" DbType="NVarChar(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="awCulture_awSiteCulture" Member="awSiteCultures" ThisKey="cultureCode" OtherKey="cultureCode" Type="awSiteCulture" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awSiteCulture" Member="awSiteCultures">
+    <Type Name="awSiteCulture">
+      <Column Name="siteCultureId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="cultureCode" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Association Name="awCulture_awSiteCulture" Member="awCulture" ThisKey="cultureCode" OtherKey="cultureCode" Type="awCulture" IsForeignKey="true" />
+      <Association Name="awSite_awSiteCulture" Member="awSite" ThisKey="siteId" OtherKey="siteId" Type="awSite" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awRole" Member="awRoles">
+    <Type Name="awRole">
+      <Column Name="roleId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="module" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="canRead" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="canUpdateStatus" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="canUpdate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="canAdd" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="canDelete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awRole_awRoleMember" Member="awRoleMembers" ThisKey="roleId" OtherKey="roleId" Type="awRoleMember" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awSiteUser" Member="awSiteUsers">
+    <Type Name="awSiteUser">
+      <Column Name="siteUserId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="joinDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awUser_awSiteUser" Member="awUser" ThisKey="userId" OtherKey="userId" Type="awUser" IsForeignKey="true" />
+      <Association Name="awSite_awSiteUser" Member="awSite" ThisKey="siteId" OtherKey="siteId" Type="awSite" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awUser" Member="awUsers">
+    <Type Name="awUser">
+      <Column Name="userId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="firstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="lastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="isSuperAdmin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="imageurl" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="link" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="birthday" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tel2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="fax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="state" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="postalcode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awUser_awSiteDomainSecurity" Member="awSiteDomainSecurities" ThisKey="userId" OtherKey="userId" Type="awSiteDomainSecurity" />
+      <Association Name="awUser_awRoleMember" Member="awRoleMembers" ThisKey="userId" OtherKey="userId" Type="awRoleMember" />
+      <Association Name="awUser_awSiteUser" Member="awSiteUsers" ThisKey="userId" OtherKey="userId" Type="awSiteUser" />
+      <Association Name="awUser_awSite" Member="awSites" ThisKey="userId" OtherKey="userId" Type="awSite" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awCultureValue" Member="awCultureValues">
+    <Type Name="awCultureValue">
+      <Column Name="cultureValueId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cultureCode" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="resourceRowId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="resourceTable" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="resourceField" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="resourceValue" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awEnvironment" Member="awEnvironments">
+    <Type Name="awEnvironment">
+      <Column Name="environmentId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="publicKey" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="serviceUrl" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awSite_awEnvironment" Member="awSite" ThisKey="siteId" OtherKey="siteId" Type="awSite" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awAutomatedTask" Member="awAutomatedTasks">
+    <Type Name="awAutomatedTask">
+      <Column Name="automatedTaskId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="automatedTaskGroupId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="guidToRun" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="isCompleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="deleteAfterComplete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="completedMessage" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="errorMessage" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="namespaceAndClass" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="methodName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="methodParameters" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="resultRedirectUrl" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awSite_awAutomatedTask" Member="awSite" ThisKey="siteId" OtherKey="siteId" Type="awSite" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awSite" Member="awSites">
+    <Type Name="awSite">
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="alias" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="cultureCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="link" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="imageurl" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="pubDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="maxBlogs" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maxUsers" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maxContents" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="accessKey" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="grantedDomains" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="bannedDomains" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="twitterUsername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="twitterPassword" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fileAmazonS3BucketName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="userConfirmationEmailTemplateId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="userResetPasswordEmailTemplateId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="awSite_awSiteDomainSecurity" Member="awSiteDomainSecurities" ThisKey="siteId" OtherKey="siteId" Type="awSiteDomainSecurity" />
+      <Association Name="awSite_awRoleMember" Member="awRoleMembers" ThisKey="siteId" OtherKey="siteId" Type="awRoleMember" />
+      <Association Name="awSite_awSiteCulture" Member="awSiteCultures" ThisKey="siteId" OtherKey="siteId" Type="awSiteCulture" />
+      <Association Name="awSite_awSiteUser" Member="awSiteUsers" ThisKey="siteId" OtherKey="siteId" Type="awSiteUser" />
+      <Association Name="awSite_awEnvironment" Member="awEnvironments" ThisKey="siteId" OtherKey="siteId" Type="awEnvironment" />
+      <Association Name="awSite_awAutomatedTask" Member="awAutomatedTasks" ThisKey="siteId" OtherKey="siteId" Type="awAutomatedTask" />
+      <Association Name="awUser_awSite" Member="awUser" ThisKey="userId" OtherKey="userId" Type="awUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

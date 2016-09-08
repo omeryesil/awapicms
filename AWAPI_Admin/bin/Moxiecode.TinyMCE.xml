@@ -1,0 +1,520 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Moxiecode.TinyMCE</name>
+    </assembly>
+    <members>
+        <member name="T:Moxiecode.TinyMCE.Web.IModule">
+            <summary>
+            Description of IAction.
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Web.IModule.ProcessRequest(System.Web.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Moxiecode.TinyMCE.Utils.JSON">
+            <summary>
+            Description of JSON.
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Utils.JSON.SerializeRPC(System.String,System.Object,System.Object,System.IO.Stream)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Utils.JSON.WriteObject(System.IO.TextWriter,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Utils.JSON.ParseJSON(System.IO.TextReader)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Utils.JSON.ParseRPC(System.IO.TextReader)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Moxiecode.TinyMCE.Utils.JSONRpcCall">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Utils.JSONRpcCall.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.Utils.JSONRpcCall.Method">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.Utils.JSONRpcCall.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.Utils.JSONRpcCall.Args">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Moxiecode.TinyMCE.SpellChecker.ISpellChecker">
+            <summary>
+            Description of ISpellChecker.
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.SpellChecker.ISpellChecker.CheckWords(System.String,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="lang"></param>
+            <param name="words"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.SpellChecker.ISpellChecker.GetSuggestions(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="lang"></param>
+            <param name="word"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Moxiecode.TinyMCE.SpellChecker.SpellCheckerModule">
+            <summary>
+            Description of HttpHandler.
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.SpellChecker.SpellCheckerModule.ProcessRequest(System.Web.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Moxiecode.TinyMCE.Compression.GzipCompressor">
+            <summary>
+            Description of GzipCompressor.
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Compression.GzipCompressor.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Compression.GzipCompressor.AddFile(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Compression.GzipCompressor.AddData(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Compression.GzipCompressor.Compress(System.IO.Stream)">
+            <summary>
+            
+            </summary>
+            <param name="to_stream"></param>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.Compression.GzipCompressor.NoCompression">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.Compression.GzipCompressor.DiskCache">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.Compression.GzipCompressor.CachePath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Moxiecode.TinyMCE.Utils.JSONLocation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Moxiecode.TinyMCE.Utils.JSONLocation.InArray">
+            <summary> </summary>
+        </member>
+        <member name="F:Moxiecode.TinyMCE.Utils.JSONLocation.InObject">
+            <summary> </summary>
+        </member>
+        <member name="F:Moxiecode.TinyMCE.Utils.JSONLocation.Normal">
+            <summary> </summary>
+        </member>
+        <member name="T:Moxiecode.TinyMCE.Utils.JSONWriter">
+            <summary>
+            Description of JSONWriter.
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Utils.JSONWriter.#ctor(System.IO.TextWriter)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Utils.JSONWriter.WriteStartObject">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Utils.JSONWriter.WriteEndObject">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Utils.JSONWriter.WriteStartArray">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Utils.JSONWriter.WriteEndArray">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Utils.JSONWriter.WritePropertyName(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Utils.JSONWriter.WriteProperty(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Utils.JSONWriter.WriteValue(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Utils.JSONWriter.WriteNull">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Utils.JSONWriter.Close">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Utils.JSONWriter.EncodeString(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Moxiecode.TinyMCE.Utils.JSONToken">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Moxiecode.TinyMCE.Utils.JSONToken.Boolean">
+            <summary> </summary>
+        </member>
+        <member name="F:Moxiecode.TinyMCE.Utils.JSONToken.Integer">
+            <summary> </summary>
+        </member>
+        <member name="F:Moxiecode.TinyMCE.Utils.JSONToken.String">
+            <summary> </summary>
+        </member>
+        <member name="F:Moxiecode.TinyMCE.Utils.JSONToken.Null">
+            <summary> </summary>
+        </member>
+        <member name="F:Moxiecode.TinyMCE.Utils.JSONToken.Float">
+            <summary> </summary>
+        </member>
+        <member name="F:Moxiecode.TinyMCE.Utils.JSONToken.StartArray">
+            <summary> </summary>
+        </member>
+        <member name="F:Moxiecode.TinyMCE.Utils.JSONToken.EndArray">
+            <summary> </summary>
+        </member>
+        <member name="F:Moxiecode.TinyMCE.Utils.JSONToken.PropertyName">
+            <summary> </summary>
+        </member>
+        <member name="F:Moxiecode.TinyMCE.Utils.JSONToken.StartObject">
+            <summary> </summary>
+        </member>
+        <member name="F:Moxiecode.TinyMCE.Utils.JSONToken.EndObject">
+            <summary> </summary>
+        </member>
+        <member name="T:Moxiecode.TinyMCE.Utils.JSONReader">
+            <summary>
+             Description of JSONReader.
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Utils.JSONReader.#ctor(System.IO.TextReader)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Utils.JSONReader.Read">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Utils.JSONReader.ToString">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.Utils.JSONReader.Location">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.Utils.JSONReader.TokenType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.Utils.JSONReader.Value">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Moxiecode.TinyMCE.ConfigHandler">
+            <summary>
+             Handles configuration specific for the manager and it's subcomponents.
+            </summary>
+        </member>
+        <member name="T:Moxiecode.TinyMCE.Web.TinyMCETextArea">
+            <summary>
+             A webcontrol for the TinyMCE editor
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Web.TinyMCETextArea.#ctor">
+            <summary>
+             Constructor
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Web.TinyMCETextArea.OnLoad(System.EventArgs)">
+            <summary>
+             Changes the id to match the new client id.
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Web.TinyMCETextArea.HasRenderedTextArea(System.Web.UI.Control)">
+            <summary>
+             Returns true or false if any TinyMCE instance has been rendered or not.
+            </summary>
+            <param name="control">Control to start the search at.</param>
+            <returns>True or false if any TinyMCE instance has been rendered or not</returns>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Web.TinyMCETextArea.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+             Renders the TinyMCE textarea control HTML to page.
+            </summary>
+            <param name="outWriter">The writer to render them HTML to.</param>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Web.TinyMCETextArea.OnTextChanged(System.EventArgs)">
+            <summary>
+             Event for text change.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Web.TinyMCETextArea.GenerateUpdateHelper">
+            <summary>
+            Generates a call to hook into TinyMCE's onChange event to double-check that the underlying
+            textarea is updated. This fix addresses the issue when textarea is not updated by TinyMCE 
+            in Firefox in an updatepanel.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Web.TinyMCETextArea.FindAllTinyMCEAreas(System.Web.UI.Control,System.Collections.ArrayList)">
+            <summary>
+             Loops though the page to find all instances of the TinyMCE control.
+            </summary>
+            <param name="control"></param>
+            <param name="items"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Web.TinyMCETextArea.System#Web#UI#IPostBackDataHandler#LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+             Called when a postback occurs on the page the control is placed at.
+            </summary>
+            <param name="postDataKey">The key of the editor data</param>
+            <param name="postCollection">All the posted data</param>
+            <returns></returns>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Web.TinyMCETextArea.System#Web#UI#IPostBackDataHandler#RaisePostDataChangedEvent">
+            <summary>
+             Raises an event when postback occurs.
+            </summary>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.Web.TinyMCETextArea.Value">
+            <summary>
+            The contents of the editor, can be HTML format or something else depending on plugins.
+            </summary>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.Web.TinyMCETextArea.Rows">
+            <summary>
+            The number of rows in the textarea that gets converted to the editor.
+            This affects the size of the editor. Default is 10
+            </summary>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.Web.TinyMCETextArea.Cols">
+            <summary>
+            The number of columns in the textarea that gets converted to the editor.
+            This affects the size of the editor. Default is 40.
+            </summary>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.Web.TinyMCETextArea.ConvertFontToSpan">
+            <summary>
+            Converts fonts to spans in HTML
+            effects: convert_fonts_to_spans
+            </summary>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.Web.TinyMCETextArea.InstallPath">
+            <summary>Installation path where the TinyMCE script directory is.</summary>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.Web.TinyMCETextArea.IsRendered">
+            <summary>
+             State if the control has been rendered or not.
+            </summary>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.Web.TinyMCETextArea.Settings">
+            <summary>
+             Collection of init settings for the TinyMCE instance.
+            </summary>
+        </member>
+        <member name="E:Moxiecode.TinyMCE.Web.TinyMCETextArea.TextChanged">
+            <summary>
+             Raises an event when the text in the editor changes.
+            </summary>
+        </member>
+        <member name="T:Moxiecode.TinyMCE.ConfigSection">
+            <summary>
+            Description of ConfigSection.
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.ConfigSection.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.ConfigSection.InstallPath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.ConfigSection.Mode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.ConfigSection.GlobalSettings">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.ConfigSection.GzipEnabled">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.ConfigSection.GzipExpiresOffset">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.ConfigSection.GzipDiskCache">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.ConfigSection.GzipCachePath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.ConfigSection.GzipNoCompression">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Moxiecode.TinyMCE.Web.HttpHandler">
+            <summary>
+            Description of HttpHandler.
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Web.HttpHandler.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Web.HttpHandler.ProcessRequest(System.Web.HttpContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="P:Moxiecode.TinyMCE.Web.HttpHandler.IsReusable">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Moxiecode.TinyMCE.SpellChecker.GoogleSpellChecker">
+            <summary>
+            Description of GoogleSpellChecker.
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.SpellChecker.GoogleSpellChecker.#ctor">
+            <summary>
+            Description of GoogleSpellChecker.
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.SpellChecker.GoogleSpellChecker.CheckWords(System.String,System.String[])">
+            <summary>
+             
+            </summary>
+            <param name="lang"></param>
+            <param name="words"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.SpellChecker.GoogleSpellChecker.GetSuggestions(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="lang"></param>
+            <param name="word"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Moxiecode.TinyMCE.Compression.GzipModule">
+            <summary>
+            Description of HttpHandler.
+            </summary>
+        </member>
+        <member name="M:Moxiecode.TinyMCE.Compression.GzipModule.ProcessRequest(System.Web.HttpContext)">
+            <summary></summary>
+            <param name="context">Request context.</param>
+        </member>
+    </members>
+</doc>

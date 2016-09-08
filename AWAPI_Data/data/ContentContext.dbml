@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Awapi" Class="ContentContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=OMER-PC;Initial Catalog=AWAPI;User ID=sa" SettingsObjectName="AWAPI_Data.Properties.Settings" SettingsPropertyName="AWAPIConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.awContentCustomField" Member="awContentCustomFields">
+    <Type Name="awContentCustomField">
+      <Column Name="customFieldId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="contentId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="applyToSubContents" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="fieldType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="maximumLength" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="minimumValue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="maximumValue" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="defaultValue" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="regularExpression" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="sortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awContentCustomField_awContentCustomFieldValue" Member="awContentCustomFieldValues" ThisKey="customFieldId" OtherKey="customFieldId" Type="awContentCustomFieldValue" />
+      <Association Name="awContentCustomField_awContentFormFieldSetting" Member="awContentFormFieldSettings" ThisKey="customFieldId" OtherKey="contentCustomFieldId" Type="awContentFormFieldSetting" />
+      <Association Name="awContent_awContentCustomField" Member="awContent" ThisKey="contentId" OtherKey="contentId" Type="awContent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awSiteTag" Member="awSiteTags">
+    <Type Name="awSiteTag">
+      <Column Name="siteTagId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awSiteTag_awSiteTaggedContent" Member="awSiteTaggedContents" ThisKey="siteTagId" OtherKey="siteTagId" Type="awSiteTaggedContent" />
+      <Association Name="awSite__awSiteTag" Member="awSite_" ThisKey="siteId" OtherKey="siteId" Type="awSite_" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awSiteTaggedContent" Member="awSiteTaggedContents">
+    <Type Name="awSiteTaggedContent">
+      <Column Name="siteTaggedContentId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="siteTagId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="contentId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="awSiteTag_awSiteTaggedContent" Member="awSiteTag" ThisKey="siteTagId" OtherKey="siteTagId" Type="awSiteTag" IsForeignKey="true" />
+      <Association Name="awContent_awSiteTaggedContent" Member="awContent" ThisKey="contentId" OtherKey="contentId" Type="awContent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awContentCulture" Member="awContentCultures">
+    <Type Name="awContentCulture">
+      <Column Name="contentCultureId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="contentId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="cultureCode" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="link" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="imageurl" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="awContent_awContentCulture" Member="awContent" ThisKey="contentId" OtherKey="contentId" Type="awContent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awContentCustomFieldValue" Member="awContentCustomFieldValues">
+    <Type Name="awContentCustomFieldValue">
+      <Column Name="customFieldValueId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="customFieldId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="contentId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="cultureCode" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="fieldValue" Type="System.String" DbType="NVarChar(2048)" CanBeNull="true" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awContentCustomField_awContentCustomFieldValue" Member="awContentCustomField" ThisKey="customFieldId" OtherKey="customFieldId" Type="awContentCustomField" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awContent" Member="awContents">
+    <Type Name="awContent">
+      <Column Name="contentId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="alias" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="contentType" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isCommentable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="parentContentId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="lineage" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="sortOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="link" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="imageurl" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="pubDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pubEndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="eventStartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="eventEndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awContent_awContentCustomField" Member="awContentCustomFields" ThisKey="contentId" OtherKey="contentId" Type="awContentCustomField" />
+      <Association Name="awContent_awSiteTaggedContent" Member="awSiteTaggedContents" ThisKey="contentId" OtherKey="contentId" Type="awSiteTaggedContent" />
+      <Association Name="awContent_awContentCulture" Member="awContentCultures" ThisKey="contentId" OtherKey="contentId" Type="awContentCulture" />
+      <Association Name="awContent_awContentForm" Member="awContentForms" ThisKey="contentId" OtherKey="contentId" Type="awContentForm" />
+      <Association Name="awSite__awContent" Member="awSite_" ThisKey="siteId" OtherKey="siteId" Type="awSite_" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awSite" Member="awSite_s">
+    <Type Name="awSite_">
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="alias" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="cultureCode" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="link" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="imageurl" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pubDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="maxBlogs" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maxUsers" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maxContents" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="awSite__awSiteTag" Member="awSiteTags" ThisKey="siteId" OtherKey="siteId" Type="awSiteTag" />
+      <Association Name="awSite__awContent" Member="awContents" ThisKey="siteId" OtherKey="siteId" Type="awContent" />
+      <Association Name="awSite__awContentFormGroup" Member="awContentFormGroups" ThisKey="siteId" OtherKey="siteId" Type="awContentFormGroup" />
+      <Association Name="awSite__awContentForm" Member="awContentForms" ThisKey="siteId" OtherKey="siteId" Type="awContentForm" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awContentFormFieldSetting" Member="awContentFormFieldSettings">
+    <Type Name="awContentFormFieldSetting">
+      <Column Name="contentFormFieldSettingId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="contentFormId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="staticFieldName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="isContentCustomField" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="contentCustomFieldId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="sortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isVisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="awContentCustomField_awContentFormFieldSetting" Member="awContentCustomField" ThisKey="contentCustomFieldId" OtherKey="customFieldId" Type="awContentCustomField" IsForeignKey="true" />
+      <Association Name="awContentForm_awContentFormFieldSetting" Member="awContentForm" ThisKey="contentFormId" OtherKey="contentFormId" Type="awContentForm" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awContentFormGroup" Member="awContentFormGroups">
+    <Type Name="awContentFormGroup">
+      <Column Name="contentFormGroupId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Association Name="awContentFormGroup_awContentFormGroupMember" Member="awContentFormGroupMembers" ThisKey="contentFormGroupId" OtherKey="contentFormGroupId" Type="awContentFormGroupMember" />
+      <Association Name="awSite__awContentFormGroup" Member="awSite_" ThisKey="siteId" OtherKey="siteId" Type="awSite_" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awContentFormGroupMember" Member="awContentFormGroupMembers">
+    <Type Name="awContentFormGroupMember">
+      <Column Name="contentFormGroupMemberId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="contentFormGroupId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="contentFormId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="sortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="awContentFormGroup_awContentFormGroupMember" Member="awContentFormGroup" ThisKey="contentFormGroupId" OtherKey="contentFormGroupId" Type="awContentFormGroup" IsForeignKey="true" />
+      <Association Name="awContentForm_awContentFormGroupMember" Member="awContentForm" ThisKey="contentFormId" OtherKey="contentFormId" Type="awContentForm" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awContentForm" Member="awContentForms">
+    <Type Name="awContentForm">
+      <Column Name="contentFormId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="contentId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="applyToSub" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="canCreateNew" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="canUpdate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="canDelete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awContentForm_awContentFormFieldSetting" Member="awContentFormFieldSettings" ThisKey="contentFormId" OtherKey="contentFormId" Type="awContentFormFieldSetting" />
+      <Association Name="awContentForm_awContentFormGroupMember" Member="awContentFormGroupMembers" ThisKey="contentFormId" OtherKey="contentFormId" Type="awContentFormGroupMember" />
+      <Association Name="awContent_awContentForm" Member="awContent" ThisKey="contentId" OtherKey="contentId" Type="awContent" IsForeignKey="true" />
+      <Association Name="awSite__awContentForm" Member="awSite_" ThisKey="siteId" OtherKey="siteId" Type="awSite_" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

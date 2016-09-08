@@ -1,0 +1,159 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="AWAPI.Admin.AdminMaster" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>AWAPI - Admin</title>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+    <!-- THIS IS FOR THE AUTHENTICATION LOGOUT -->
+    <%--    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">--%>
+    <style media="all" type="text/css">
+        @import "css/all.css";
+    </style>
+    <link type="text/css" media="screen" rel="stylesheet" href="includes/colorbox/colorbox.css" />
+    <!--[if IE]>
+	<link type="text/css" media="screen" rel="stylesheet" href="includes/colorbox/colorbox-ie.css" title="example" />
+    <![endif]-->
+
+    <script src="includes/jscript/jquery-1.3.2.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="includes/colorbox/jquery.colorbox.js"></script>
+
+    <style type="text/css">
+        #UpdatePanel1
+        {
+            width: 200px;
+            height: 50px;
+            border: solid 1px gray;
+        }
+        #AlertDiv
+        {
+            left: 40%;
+            top: 40%;
+            position: absolute;
+            width: 200px;
+            padding: 12px;
+            border: #000000 1px solid;
+            background-color: white;
+            text-align: left;
+            visibility: hidden;
+            z-index: 99;
+        }
+        #AlertButtons
+        {
+            position: absolute;
+            right: 5%;
+            bottom: 5%;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" />
+
+    <script language="javascript" type="text/javascript" src="includes/jscript/misc.js"></script>
+
+    <div id='ajaxError' style='display: none'>
+        <font color="#ff0000"><span id='ajaxErrorMessage' style="padding: 5px; background-color: #ffffff">
+        </span></font>
+    </div>
+    <asp:Literal ID='litScript' runat='server' />
+    <div class="msgContainer">
+        <asp:UpdatePanel ID="UpdatePanel1" runat='server'>
+            <ContentTemplate>
+                <asp:Literal ID="_msg" runat="server"></asp:Literal>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
+    <div id="main">
+        <div id="header">
+            <div>
+                <div style="float: left;">
+                    <a href="default.aspx" class="logo">
+                        <asp:Image ID='_siteLogo' runat='server' ImageUrl="img/logo.jpg" />
+                        <asp:Literal ID='_siteTitle' runat='server' />
+                    </a>
+                </div>
+                <div class="box">
+                    <div>
+                        <asp:Label ID='_currentServerTime' Style="font-size: 0.8em; color: #8c8c8c;" runat='server' /><br />
+                        <asp:Label ID='_currentUser' runat='server' /><br />
+                        <a href="javascript:void(0);" onclick="$.fn.colorbox({href:'frames/selectsite.aspx', open:true, width:'470px', height:'450px', iframe:true});">
+                            Select Site</a> |
+                        <asp:LinkButton ID='lbtnLogOut' runat='server' Text="Logout" OnClientClick="return confirm('Are you sure you want to logout?');"
+                            OnClick="lbtnLogOut_Click" />
+                    </div>
+                    <div class="search">
+<%--                        <asp:TextBox ID='txbSearch' CssClass="textMedium" runat='server' />&nbsp;<asp:ImageButton
+                            CssClass="button" runat='server' ID='btnSearch' Text='Search' ImageUrl="img/button/1616/search-icon.png"
+                            ToolTip="Search" />--%>
+                    </div>
+                </div>
+            </div>
+            <ul id="top-navigation">
+                <li id='menuLiDashboard' runat='server'>
+                    <asp:HyperLink ID='menuDashboard' runat='server' Text="Dashboard" NavigateUrl="~/admin/default.aspx" />
+                </li>
+                <li id='menuLiContents' runat='server'>
+                    <asp:HyperLink ID='menuContents' runat='server' Text="Contents" NavigateUrl="~/admin/contents.aspx" />
+                </li>
+                <li id='menuLiContentForms' runat='server'>
+                    <asp:HyperLink ID='menuContentForms' runat='server' Text="Content Forms" NavigateUrl="~/admin/contentforms.aspx" />
+                </li>
+                <li id='menuLiBlogs' runat='server'>
+                    <asp:HyperLink ID='menuBlogs' runat='server' Text="Blogs" NavigateUrl="~/admin/blogs.aspx" />
+                </li>
+                <li id='menuLiContest' runat='server'>
+                    <asp:HyperLink ID='menuContest' runat='server' Text="Contests" NavigateUrl="~/admin/contests.aspx" />
+                </li>
+                <li id='menuLiPolls' runat='server'>
+                    <asp:HyperLink ID='menuPolls' runat='server' Text="Polls" NavigateUrl="~/admin/polls.aspx" />
+                </li>
+                <li id='menuLiFiles' runat='server'>
+                    <asp:HyperLink ID='menuFileManager' runat='server' Text="Resources" NavigateUrl="~/admin/files.aspx" />
+                </li>
+                <li id='menuLiUsers' runat='server'>
+                    <asp:HyperLink ID='menuUsers' runat='server' Text="Users" NavigateUrl="~/admin/users.aspx" />
+                </li>
+                <li id='menuLiDataTransfer' runat='server'>
+                    <asp:HyperLink ID='menuDataTransfer' runat='server' Text="Data Transfer" NavigateUrl="~/admin/datatransfer.aspx" />
+                </li>
+                <li id='menuLiSites' runat='server'>
+                    <asp:HyperLink ID='menuSites' runat='server' Text="Sites" NavigateUrl="~/admin/sites.aspx" />
+                </li>
+                <li id='menuLiConfiguration' runat='server'>
+                    <asp:HyperLink ID='menuConfiguration' runat='server' Text="Configuration" NavigateUrl="~/admin/configuration.aspx" />
+                </li>                
+            </ul>
+        </div>
+        <div id="middle">
+            <asp:ContentPlaceHolder ID="contentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="footer">
+            <!-- Copyright © 2008-2010 AWAPI CMS. All Rights Reserved. -->
+        </div>
+    </div>
+    <div id='ajaxLoaderContainer' style="display: none; background-color: #dcdcdc;">
+        <img src="img/ajax-loader.gif" />
+    </div>
+    </form>
+</body>
+
+<script language="javascript" type="text/javascript">
+    $(document).ready(function() {
+        //shoq hide 'selectSite' link
+        var showSelectSite = '<%= IsSiteSelected==false?"true":"false"  %>';
+        if (showSelectSite == 'true')
+            $("#selectSiteMenuLink").show();
+        else
+            $("#selectSiteMenuLink").hide();
+    });
+</script>
+
+</html>

@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0">
+  <channel site="Awapi Site" sitelink="http://awapi.com" defaultculture="en" culture="en" currentcontentid="0" pagesize="5" pageindex="0" servertime="2010-10-02T03:22:52">
+    <title>AWAPI CMS Feed</title>
+    <description>AWAPI Content in RSS 2.0 Feed Format</description>
+    <managingEditor></managingEditor>
+    <category>contents</category>
+    <item>
+      <guid isPermaLink="false">7261529626954324867</guid>
+      <title>Dashboard</title>
+      <description>Dashboard module is the home page of the Awapi CMS admin panel. You can see the pending blog post comments, recent posts, recently uploaded images on the dashboard.</description>
+      <a10:updated>2010-08-12T22:25:13-04:00</a10:updated>
+      <alias>dashboard</alias>
+      <contenttype>content</contenttype>
+      <createdate>2010-08-12T22:25:13.46</createdate>
+      <imageurl>http://services.awapi.com/handler/filehandler.ashx?id=5706057638559750808</imageurl>
+      <lineage>|08563261781725415080|04951301209086720222|</lineage>
+      <parentcontentid>4951301209086720222</parentcontentid>
+      <pubdate>2010-08-12T22:24:00</pubdate>
+      <siteid>9122080178153787868</siteid>
+      <sortorder>10</sortorder>
+      <userid>1</userid>
+    </item>
+    <item>
+      <guid isPermaLink="false">4744712455856785299</guid>
+      <title>Blogs</title>
+      <description>
+        &lt;p&gt;Awapi CMS blogs module allows you to manage blogs, blog posts and the blog post comments. Each blog section, blog, blog post or blog post comment, can be managed by different users (User roles are assigned under the users module).&lt;/p&gt;
+
+        &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+        &lt;p&gt;You can manage multiple blogs in the same user session.&lt;/p&gt;
+        &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+        &lt;p&gt;Blog posts can be easily categorized and tagged through Awapi CMS blog module.&amp;nbsp; Auto-tag-completion feature makes it very easy to tag the blog posts. You can make the blog post available in between specified days by using the publish start and publish end days.&lt;/p&gt;
+
+        &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+        &lt;p&gt;Awapi CMS Blog module allows you to assign multiple blog comment moderators. An email will be sent by the CMS system to the moderators after a new comment is posted.&lt;/p&gt;
+        &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+        Awapi CMS&amp;rsquo;s RSS feed provider service makes the blogs and the blog posts available to RSS subscribers.
+      </description>
+      <a10:updated>2010-08-12T22:25:42-04:00</a10:updated>
+      <alias>blogs</alias>
+      <contenttype>content</contenttype>
+      <createdate>2010-08-12T22:25:42.523</createdate>
+      <imageurl>http://awapi.s3.amazonaws.com/7432079416660319773/6589506607336066394.jpg</imageurl>
+      <lineage>|08563261781725415080|04951301209086720222|</lineage>
+      <parentcontentid>4951301209086720222</parentcontentid>
+      <pubdate>2010-08-12T22:25:00</pubdate>
+      <siteid>9122080178153787868</siteid>
+      <sortorder>20</sortorder>
+      <userid>1</userid>
+    </item>
+    <item>
+      <guid isPermaLink="false">5173457300071713261</guid>
+      <title>Contents</title>
+      <description>
+        &lt;p&gt;The content module allows you to create or update any kind of content on the Awapi CMS. Fore example, you can create daily announcements, navigation menu list, news list, daily horoscopes, bibliography, product features, video list or image list by using Awapi CSM content module.&lt;/p&gt;
+
+        &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+        &lt;p&gt;In addition to content module's predefined fields, such as title, description and imageurl, you can easily add custom fields to each content on Awapi CMS content module.&lt;/p&gt;
+        &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+        &lt;p&gt;Awapi CMS Contents module supports multilanguage content entries. You can add or remove the languages through the Awapi CMS stie module.&lt;/p&gt;
+
+        &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+        &lt;p&gt;Awapi CMS allows you to set contents availability dates by setting publish start and publish end dates. You can also create list of events by using this feature.&lt;/p&gt;
+        &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+        Content module provides a powerful rich text editor; you can insert images, YouTube videos, or any other multimedia object, or you can style your content html.
+      </description>
+      <a10:updated>2010-08-12T22:26:07-04:00</a10:updated>
+      <alias>contents</alias>
+      <contenttype>content</contenttype>
+      <createdate>2010-08-12T22:26:07.663</createdate>
+      <imageurl>http://services.awapi.com/handler/filehandler.ashx?id=5576190239423205145</imageurl>
+      <lineage>|08563261781725415080|04951301209086720222|</lineage>
+      <parentcontentid>4951301209086720222</parentcontentid>
+      <pubdate>2010-08-12T22:25:00</pubdate>
+      <siteid>9122080178153787868</siteid>
+      <sortorder>30</sortorder>
+      <userid>1</userid>
+    </item>
+    <item>
+      <guid isPermaLink="false">8378070802786790665</guid>
+      <title>Contests</title>
+      <description>
+        &lt;p&gt;Contests module gives you a very flexible contests engine. Contest module has the following features:&lt;/p&gt;
+
+        &lt;ul&gt;
+        &lt;li&gt;Grouping contests&lt;/li&gt;
+        &lt;li&gt;Setting maximum number of users&lt;/li&gt;
+        &lt;li&gt;Setting publish start and end dates&lt;/li&gt;
+        &lt;li&gt;Setting number of winners&lt;/li&gt;
+
+        &lt;/ul&gt;
+        &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+        &lt;p&gt;You can export list of the contest entries in a CSV file, which makes the contest entries reporting very easy and customizable.&lt;/p&gt;
+      </description>
+      <a10:updated>2010-08-12T22:26:29-04:00</a10:updated>
+      <alias>contests</alias>
+      <contenttype>content</contenttype>
+      <createdate>2010-08-12T22:26:29.557</createdate>
+      <imageurl>http://services.awapi.com/handler/filehandler.ashx?id=8478363105470842318</imageurl>
+      <lineage>|08563261781725415080|04951301209086720222|</lineage>
+      <parentcontentid>4951301209086720222</parentcontentid>
+      <pubdate>2010-08-12T22:26:00</pubdate>
+      <siteid>9122080178153787868</siteid>
+      <sortorder>40</sortorder>
+      <userid>1</userid>
+    </item>
+    <item>
+      <guid isPermaLink="false">6420193699083066544</guid>
+      <title>Polls</title>
+      <description>
+        &lt;p&gt;You can create polls by using the Awapi CMS Poll module.&lt;/p&gt;
+
+        &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+        &lt;p&gt;The poll module supports multilanguage poll questions and multiple choices.&lt;/p&gt;
+        &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+        You can publish a poll in a future time by setting the publish start date property.
+      </description>
+      <a10:updated>2010-08-12T22:26:55-04:00</a10:updated>
+      <alias>polls</alias>
+      <contenttype>content</contenttype>
+      <createdate>2010-08-12T22:26:49.697</createdate>
+      <imageurl>http://awapi.s3.amazonaws.com/7432079416660319773/6025994493560036119.jpg</imageurl>
+      <lineage>|08563261781725415080|04951301209086720222|</lineage>
+      <parentcontentid>4951301209086720222</parentcontentid>
+      <pubdate>2010-08-12T22:26:00</pubdate>
+      <siteid>9122080178153787868</siteid>
+      <sortorder>50</sortorder>
+      <userid>1</userid>
+    </item>
+  </channel>
+</rss>

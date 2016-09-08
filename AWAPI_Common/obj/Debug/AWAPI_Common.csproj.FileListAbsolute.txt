@@ -1,0 +1,10 @@
+C:\Projects\AWAPI\AWAPI_Common\bin\Debug\AWAPI_Common.dll
+C:\Projects\AWAPI\AWAPI_Common\bin\Debug\AWAPI_Common.pdb
+C:\Projects\AWAPI\AWAPI_Common\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\AWAPI\AWAPI_Common\obj\Debug\AWAPI_Common.dll
+C:\Projects\AWAPI\AWAPI_Common\obj\Debug\AWAPI_Common.pdb
+D:\Projects\AWAPI\AWAPI_Common\bin\Debug\AWAPI_Common.dll
+D:\Projects\AWAPI\AWAPI_Common\bin\Debug\AWAPI_Common.pdb
+D:\Projects\AWAPI\AWAPI_Common\obj\Debug\AWAPI_Common.csprojResolveAssemblyReference.cache
+D:\Projects\AWAPI\AWAPI_Common\obj\Debug\AWAPI_Common.dll
+D:\Projects\AWAPI\AWAPI_Common\obj\Debug\AWAPI_Common.pdb

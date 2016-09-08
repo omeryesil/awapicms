@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="EmailTemplateContext">
+  <DataContextMoniker Name="/EmailTemplateContextDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a5ccf047-24b9-428b-bef0-47093ed97623" absoluteBounds="0.625, 0.875, 2, 3.9937196846803018">
+      <DataClassMoniker Name="/EmailTemplateContextDataContext/awSite_EmailTemplate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1f3bfec8-74de-4bac-a2d3-65ac28449226" absoluteBounds="0.64000000000000057, 1.335, 1.9700000000000002, 3.4337196846803026" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e390d7c8-fba1-44e3-8064-b560bd51b36c" absoluteBounds="3.375, 4.625, 2, 2.3784721569220224">
+      <DataClassMoniker Name="/EmailTemplateContextDataContext/awEmailTemplate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e62f274d-ac6a-4735-89cc-1d91dff3c673" absoluteBounds="3.3899999999999997, 5.085, 1.9700000000000002, 1.8184721569220224" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.625 : 2.7499995); (4.375 : 2.7499995); (4.375 : 4.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EmailTemplateContextDataContext/awSite_EmailTemplate/awSite_EmailTemplate_awEmailTemplate" />
+      <nodes>
+        <classShapeMoniker Id="a5ccf047-24b9-428b-bef0-47093ed97623" />
+        <classShapeMoniker Id="e390d7c8-fba1-44e3-8064-b560bd51b36c" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="018323ff-3183-4fd4-ba26-949595a3d31f" absoluteBounds="6.125, 1, 2, 2.8630464152495065">
+      <DataClassMoniker Name="/EmailTemplateContextDataContext/awBlog_EmailTemplate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9ac1aa28-cd2b-4029-98ae-f2d473256bbb" absoluteBounds="6.14, 1.46, 1.9700000000000002, 2.3030464152495065" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.9062525 : 4.625); (4.9062525 : 1.87499975); (6.125 : 1.87499975)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EmailTemplateContextDataContext/awEmailTemplate/awEmailTemplate_awBlog" />
+      <nodes>
+        <classShapeMoniker Id="e390d7c8-fba1-44e3-8064-b560bd51b36c" />
+        <classShapeMoniker Id="018323ff-3183-4fd4-ba26-949595a3d31f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.625 : 3.36902295762475); (4.29166666666667 : 3.36902295762475 : JumpStart); (4.45833333333333 : 3.36902295762475 : JumpEnd); (4.82291916666667 : 3.36902295762475 : JumpStart); (4.98958583333333 : 3.36902295762475 : JumpEnd); (6.125 : 3.36902295762475)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EmailTemplateContextDataContext/awSite_EmailTemplate/awSite_EmailTemplate_awBlog" />
+      <nodes>
+        <classShapeMoniker Id="a5ccf047-24b9-428b-bef0-47093ed97623" />
+        <classShapeMoniker Id="018323ff-3183-4fd4-ba26-949595a3d31f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

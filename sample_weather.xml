@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0">
+  <channel site="Joe Spring - Redesign" sitelink="" defaultlanguage="en" language="" currentcontentid="0" pagesize="0" pageindex="0" servertime="2010-01-25T14:43:17">
+    <title>AWAPI CMS Weather Feed</title>
+    <link>http://www.awapi.com/</link>
+    <description>AWAPI Weather in RSS 2.0 Feed Format</description>
+    <managingEditor>oyesilo@yahoo.ca</managingEditor>
+    <category>weather</category>
+    <sitetitle>Joe Fresh</sitetitle>
+    <siteid>1234234234</siteid>
+    <city></city>
+    <postalcode></postalcode>
+    <currentdatetime></currentdatetime>
+    <forecatestdate></forecatestdate>
+    <latitude></latitude>
+    <longitude></longitude>    
+    <item>
+      <title>Current Condition</title>
+      <category>current_conditions</category>
+      <description>Mostly Cloudy</description>
+      <temp_f></temp_f>
+      <temp_c></temp_c>
+      <humidity></humidity>
+      <windcondition></windcondition>
+      <imageurl></imageurl>      
+      <pubdate>2010-01-25T11:30:00</pubdate>
+    </item>
+    <item>
+      <title>Mon</title>
+      <description>Chance of Rain</description>
+      <category>forecast</category>
+      <temp_low_f></temp_low_f>
+      <temp_low_c></temp_low_c>
+      <temp_high_f></temp_high_f>
+      <temp_high_c></temp_high_c>
+      <imageurl></imageurl>
+      <pubdate>2010-01-25T11:30:00</pubdate>
+    </item>
+    <item>
+      <title>Tue</title>
+      <description>Chance of Rain</description>
+      <category>forecast</category>
+      <temp_low_f></temp_low_f>
+      <temp_low_c></temp_low_c>
+      <temp_high_f></temp_high_f>
+      <temp_high_c></temp_high_c>
+      <imageurl></imageurl>
+      <pubdate>2010-01-25T11:30:00</pubdate>
+    </item>
+  </channel>
+</rss>

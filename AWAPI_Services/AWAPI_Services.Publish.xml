@@ -1,0 +1,50 @@
+<publishData>
+  <publishTarget publishUrl="C:\Publishes\awapi\services.awapi.com\">
+    <file relUrl="wcf/PollService.svc" publishTime="08/07/2010 12:18:54" />
+    <file relUrl="GenericErrorPage.htm" publishTime="09/30/2010 02:27:33" />
+    <file relUrl="bin/PostSharp.Public.dll" publishTime="08/12/2010 22:16:03" />
+    <file relUrl="wcf/ContentService.svc" publishTime="08/07/2010 12:18:54" />
+    <file relUrl="wcf/UserService.svc" publishTime="08/07/2010 12:18:54" />
+    <file relUrl="wcf/BlogService.svc" publishTime="08/07/2010 12:18:54" />
+    <file relUrl="bin/AWAPI_BusinessLibrary.dll" publishTime="10/02/2010 03:21:42" />
+    <file relUrl="bin/AWAPI_Data.pdb" publishTime="10/02/2010 03:21:41" />
+    <file relUrl="bin/Newtonsoft.Json.Net20.dll" publishTime="08/07/2010 12:17:06" />
+    <file relUrl="wcf/ContestService.svc" publishTime="08/07/2010 12:18:54" />
+    <file relUrl="ExternalLib/PostSharp.Public.dll" publishTime="08/12/2010 22:16:03" />
+    <file relUrl="ExternalLib/Kerr.Credentials.dll" publishTime="09/11/2010 14:08:52" />
+    <file relUrl="MIMEContentTypes.xml" publishTime="08/07/2010 12:18:57" />
+    <file relUrl="test_atom.xml" publishTime="10/02/2010 03:23:19" />
+    <file relUrl="test_rss.xml" publishTime="08/07/2010 12:18:57" />
+    <file relUrl="bin/Kerr.Credentials.dll" publishTime="09/11/2010 14:08:52" />
+    <file relUrl="utilities/ffmpeg/SDL.dll" publishTime="08/07/2010 12:18:56" />
+    <file relUrl="handler/contenthandler.ashx" publishTime="08/07/2010 12:18:57" />
+    <file relUrl="bin/DotNetOpenAuth.dll" publishTime="09/11/2010 14:08:58" />
+    <file relUrl="ExternalLib/DotNetOpenAuth.dll" publishTime="09/11/2010 14:08:58" />
+    <file relUrl="utilities/ffmpeg/ffmpeg.exe" publishTime="08/07/2010 12:18:56" />
+    <file relUrl="bin/AWAPI_Common.dll" publishTime="10/02/2010 03:21:40" />
+    <file relUrl="bin/AWAPI_BusinessLibrary.pdb" publishTime="10/02/2010 03:21:42" />
+    <file relUrl="handler/contesthandler.ashx" publishTime="08/07/2010 12:18:57" />
+    <file relUrl="utilities/ffmpeg/pthreadGC2.dll" publishTime="08/07/2010 12:18:56" />
+    <file relUrl="handler/filehandler.ashx" publishTime="08/07/2010 12:18:57" />
+    <file relUrl="Web.config" publishTime="09/30/2010 02:34:54" />
+    <file relUrl="wcf/SendEmailToConenders.aspx" publishTime="08/07/2010 12:18:54" />
+    <file relUrl="bin/AWAPI_Common.pdb" publishTime="10/02/2010 03:21:40" />
+    <file relUrl="bin/AWAPI_Services.dll" publishTime="10/02/2010 03:21:43" />
+    <file relUrl="handler/bloghandler.ashx" publishTime="08/07/2010 12:18:57" />
+    <file relUrl="bin/AWAPI_Data.dll" publishTime="10/02/2010 03:21:41" />
+    <file relUrl="ExternalLib/LinqToTwitter.dll" publishTime="09/11/2010 14:08:38" />
+    <file relUrl="bin/AWAPI_Services.pdb" publishTime="10/02/2010 03:21:43" />
+    <file relUrl="robots.txt" publishTime="08/07/2010 12:18:57" />
+    <file relUrl="bin/LinqToTwitter.dll" publishTime="09/11/2010 14:08:38" />
+    <file relUrl="bin/PostSharp.Laos.dll" publishTime="08/12/2010 22:16:03" />
+    <file relUrl="ExternalLib/PostSharp.Laos.dll" publishTime="08/12/2010 22:16:03" />
+    <file relUrl="bin/AWSSDK.dll" publishTime="08/07/2010 12:17:06" />
+    <file relUrl="handler/twitterhandler.ashx" publishTime="08/07/2010 12:18:57" />
+    <file relUrl="handler/weatherhandler.ashx" publishTime="08/07/2010 12:18:57" />
+    <file relUrl="img/imageNotAvailable.jpg" publishTime="08/07/2010 12:18:56" />
+    <file relUrl="wcf/FileService.svc" publishTime="08/07/2010 12:18:54" />
+    <file relUrl="handler/pollhandler.ashx" publishTime="08/07/2010 12:18:57" />
+    <file relUrl="handler/automatedtask.ashx" publishTime="08/07/2010 12:18:57" />
+    <file relUrl="crossdomain.xml" publishTime="08/07/2010 12:18:57" />
+  </publishTarget>
+</publishData>

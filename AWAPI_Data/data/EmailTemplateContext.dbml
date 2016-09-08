@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Awapi" Class="EmailTemplateContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=OMER-PC;Initial Catalog=AWAPI;User ID=sa" SettingsObjectName="AWAPI_Data.Properties.Settings" SettingsPropertyName="AWAPIConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.awSite" Member="awSite_EmailTemplates">
+    <Type Name="awSite_EmailTemplate">
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="alias" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="cultureCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="link" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="imageurl" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="pubDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="maxBlogs" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maxUsers" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maxContents" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="accessKey" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="grantedDomains" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="bannedDomains" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="twitterUsername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="twitterPassword" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="awSite_EmailTemplate_awEmailTemplate" Member="awEmailTemplates" ThisKey="siteId" OtherKey="siteId" Type="awEmailTemplate" />
+      <Association Name="awSite_EmailTemplate_awBlog" Member="awBlog_EmailTemplates" ThisKey="siteId" OtherKey="siteId" Type="awBlog_EmailTemplate" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awEmailTemplate" Member="awEmailTemplates">
+    <Type Name="awEmailTemplate">
+      <Column Name="emailTemplateId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="emailFrom" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="emailSubject" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="emailBody" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awEmailTemplate_awBlog" Member="awBlog_EmailTemplates" ThisKey="emailTemplateId" OtherKey="commentEmailTemplateId" Type="awBlog_EmailTemplate" />
+      <Association Name="awSite_EmailTemplate_awEmailTemplate" Member="awSite_EmailTemplate" ThisKey="siteId" OtherKey="siteId" Type="awSite_EmailTemplate" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awBlog" Member="awBlog_EmailTemplates">
+    <Type Name="awBlog_EmailTemplate">
+      <Column Name="blogId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="imageurl" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="blogPostPage" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="enableCommentEmailNotifier" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="commentEmailTo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="commentEmailTemplateId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awEmailTemplate_awBlog" Member="awEmailTemplate" ThisKey="commentEmailTemplateId" OtherKey="emailTemplateId" Type="awEmailTemplate" IsForeignKey="true" />
+      <Association Name="awSite_EmailTemplate_awBlog" Member="awSite_EmailTemplate" ThisKey="siteId" OtherKey="siteId" Type="awSite_EmailTemplate" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

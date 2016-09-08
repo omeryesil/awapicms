@@ -1,0 +1,4 @@
+tocTab[tocTab.length] = new Array("1:1", "", "Deployment Model", "EARoot/EA1/EA2.htm", "179.png", "1", "0", "", "Deployment diagram0","{6F34FA76-60E9-4f25-AA97-11C35D6AC068}");
+tocTab[tocTab.length] = new Array("1.1", "1", "Awapi Services", "EARoot/EA1/EA6.htm", "4.png", "", "", "{A7AB3684-CBF5-461d-9C4E-1DD90569B9C4}", "Package");
+tocTab[tocTab.length] = new Array("1.2", "1", "Working with ASP.NET", "EARoot/EA1/EA7.htm", "4.png", "", "", "{24035595-B711-4390-89F6-E9F1659AE973}", "Package");
+tocTab[tocTab.length] = new Array("1.3", "1", "Working with Other Languages", "EARoot/EA1/EA8.htm", "4.png", "", "", "{383FD853-8971-4310-BEF1-9D19513998C3}", "Package");

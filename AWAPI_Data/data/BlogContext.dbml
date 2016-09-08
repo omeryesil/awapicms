@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Awapi" Class="BlogContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=[YourServer];Initial Catalog=[Database];User ID=[UserId]" SettingsObjectName="AWAPI_Data.Properties.Settings" SettingsPropertyName="AWAPIConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.awBlogPostComment" Member="awBlogPostComments">
+    <Type Name="awBlogPostComment">
+      <Column Name="blogCommentID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="blogPostId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(1024)" CanBeNull="true" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="userName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="firstName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pubDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awUser_BlogPost_awBlogPostComment" Member="awUser_BlogPost" ThisKey="userId" OtherKey="userId" Type="awUser_BlogPost" IsForeignKey="true" />
+      <Association Name="awBlogPost_awBlogPostComment" Member="awBlogPost" ThisKey="blogPostId" OtherKey="blogPostId" Type="awBlogPost" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awBlogCategoryPost" Member="awBlogCategoryPosts">
+    <Type Name="awBlogCategoryPost">
+      <Column Name="blogCategoryPostId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="blogCategoryId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="blogPostId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awBlogCategory_awBlogCategoryPost" Member="awBlogCategory" ThisKey="blogCategoryId" OtherKey="blogCategoryId" Type="awBlogCategory" IsForeignKey="true" />
+      <Association Name="awBlogPost_awBlogCategoryPost" Member="awBlogPost" ThisKey="blogPostId" OtherKey="blogPostId" Type="awBlogPost" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awBlogTag" Member="awBlogTags">
+    <Type Name="awBlogTag">
+      <Column Name="blogTagId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="blogId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awBlogTag_awBlogTagPost" Member="awBlogTagPosts" ThisKey="blogTagId" OtherKey="blogTagId" Type="awBlogTagPost" />
+      <Association Name="awBlog_awBlogTag" Member="awBlog" ThisKey="blogId" OtherKey="blogId" Type="awBlog" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awBlogTagPost" Member="awBlogTagPosts">
+    <Type Name="awBlogTagPost">
+      <Column Name="blogTagPostId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="blogTagId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="blogPostId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="awBlogTag_awBlogTagPost" Member="awBlogTag" ThisKey="blogTagId" OtherKey="blogTagId" Type="awBlogTag" IsForeignKey="true" />
+      <Association Name="awBlogPost_awBlogTagPost" Member="awBlogPost" ThisKey="blogPostId" OtherKey="blogPostId" Type="awBlogPost" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awBlogCategory" Member="awBlogCategories">
+    <Type Name="awBlogCategory">
+      <Column Name="blogCategoryId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="blogId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="parentBlogCategoryId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awBlogCategory_awBlogCategoryPost" Member="awBlogCategoryPosts" ThisKey="blogCategoryId" OtherKey="blogCategoryId" Type="awBlogCategoryPost" />
+      <Association Name="awBlog_awBlogCategory" Member="awBlog" ThisKey="blogId" OtherKey="blogId" Type="awBlog" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awUser" Member="awUser_BlogPosts">
+    <Type Name="awUser_BlogPost">
+      <Column Name="userId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="firstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="lastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="isSuperAdmin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="imageurl" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="link" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="birthday" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tel2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="state" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="postalcode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awUser_BlogPost_awBlogPostComment" Member="awBlogPostComments" ThisKey="userId" OtherKey="userId" Type="awBlogPostComment" />
+      <Association Name="awUser_BlogPost_awBlogPost" Member="awBlogPosts" ThisKey="userId" OtherKey="authorUserId" Type="awBlogPost" />
+      <Association Name="awUser_BlogPost_awFile_Blog" Member="awFile_Blogs" ThisKey="userId" OtherKey="userId" Type="awFile_Blog" />
+      <Association Name="awUser_BlogPost_awBlog" Member="awBlogs" ThisKey="userId" OtherKey="userId" Type="awBlog" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awBlogPost" Member="awBlogPosts">
+    <Type Name="awBlogPost">
+      <Column Name="blogPostId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="blogId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="authorUserId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="summary" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="isPublished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isCommentable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="recommended" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pubDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pubEndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="geoTag" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="imageurl" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awBlogPost_awBlogPostComment" Member="awBlogPostComments" ThisKey="blogPostId" OtherKey="blogPostId" Type="awBlogPostComment" />
+      <Association Name="awBlogPost_awBlogCategoryPost" Member="awBlogCategoryPosts" ThisKey="blogPostId" OtherKey="blogPostId" Type="awBlogCategoryPost" />
+      <Association Name="awBlogPost_awBlogTagPost" Member="awBlogTagPosts" ThisKey="blogPostId" OtherKey="blogPostId" Type="awBlogTagPost" />
+      <Association Name="awBlogPost_awBlogPostFile" Member="awBlogPostFiles" ThisKey="blogPostId" OtherKey="blogPostId" Type="awBlogPostFile" />
+      <Association Name="awUser_BlogPost_awBlogPost" Member="awUser_BlogPost" ThisKey="authorUserId" OtherKey="userId" Type="awUser_BlogPost" IsForeignKey="true" />
+      <Association Name="awBlog_awBlogPost" Member="awBlog" ThisKey="blogId" OtherKey="blogId" Type="awBlog" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awFile" Member="awFile_Blogs">
+    <Type Name="awFile_Blog">
+      <Column Name="fileId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="path" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="thumbnail" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="contentType" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="contentSize" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="link" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pubDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isOnLocal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awFile_Blog_awBlogPostFile" Member="awBlogPostFiles" ThisKey="fileId" OtherKey="fileId" Type="awBlogPostFile" />
+      <Association Name="awUser_BlogPost_awFile_Blog" Member="awUser_BlogPost" ThisKey="userId" OtherKey="userId" Type="awUser_BlogPost" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awBlogPostFile" Member="awBlogPostFiles">
+    <Type Name="awBlogPostFile">
+      <Column Name="blogPostFileId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="blogPostId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="fileId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="sortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="awBlogPost_awBlogPostFile" Member="awBlogPost" ThisKey="blogPostId" OtherKey="blogPostId" Type="awBlogPost" IsForeignKey="true" />
+      <Association Name="awFile_Blog_awBlogPostFile" Member="awFile_Blog" ThisKey="fileId" OtherKey="fileId" Type="awFile_Blog" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.awBlog" Member="awBlogs">
+    <Type Name="awBlog">
+      <Column Name="blogId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="siteId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="userId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="alias" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="imageurl" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="blogPostPage" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="enableCommentEmailNotifier" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="commentEmailTo" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="commentEmailTemplateId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="lastBuildDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="awBlog_awBlogTag" Member="awBlogTags" ThisKey="blogId" OtherKey="blogId" Type="awBlogTag" />
+      <Association Name="awBlog_awBlogCategory" Member="awBlogCategories" ThisKey="blogId" OtherKey="blogId" Type="awBlogCategory" />
+      <Association Name="awBlog_awBlogPost" Member="awBlogPosts" ThisKey="blogId" OtherKey="blogId" Type="awBlogPost" />
+      <Association Name="awUser_BlogPost_awBlog" Member="awUser_BlogPost" ThisKey="userId" OtherKey="userId" Type="awUser_BlogPost" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

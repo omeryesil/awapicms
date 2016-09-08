@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <ProjectGuid>{37C82B46-603B-4849-AEF1-24A096D6807F}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Moxiecode.TinyMCE</RootNamespace>
+    <AssemblyName>Moxiecode.TinyMCE</AssemblyName>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <BaseIntermediateOutputPath>tmp\</BaseIntermediateOutputPath>
+    <DocumentationFile>C:\inetpub\wwwroot\bin\Moxiecode.TinyMCE.xml</DocumentationFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>C:\inetpub\wwwroot\bin\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <IntermediateOutputPath>tmp\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Compression\GzipCompressor.cs" />
+    <Compile Include="Compression\GzipModule.cs" />
+    <Compile Include="ConfigHandler.cs" />
+    <Compile Include="ConfigSection.cs" />
+    <Compile Include="SpellChecker\GoogleSpellChecker.cs" />
+    <Compile Include="SpellChecker\ISpellChecker.cs" />
+    <Compile Include="SpellChecker\SpellCheckerModule.cs" />
+    <Compile Include="Utils\JSON.cs" />
+    <Compile Include="Utils\JSONReader.cs" />
+    <Compile Include="Utils\JSONWriter.cs" />
+    <Compile Include="Web\IModule.cs" />
+    <Compile Include="Web\HttpHandler.cs" />
+    <Compile Include="Web\TextArea.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Compression" />
+    <Folder Include="SpellChecker" />
+    <Folder Include="Utils" />
+    <Folder Include="Web" />
+  </ItemGroup>
+</Project>

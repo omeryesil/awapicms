@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="PollContext">
+  <DataContextMoniker Name="/PollContextDataContext" />
+  <nestedChildShapes>
+    <classShape Id="3c21a5f8-1cf6-407f-afc1-7506e35b2cec" absoluteBounds="0.75, 3.375, 2, 3.6706701791286465">
+      <DataClassMoniker Name="/PollContextDataContext/awSite_Poll" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7671e9f6-8b4a-4f2f-8827-24a58f35bf3e" absoluteBounds="0.765, 3.835, 1.9700000000000002, 3.1106701791286469" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5b5a5d79-f784-4339-a798-2925c9eeed14" absoluteBounds="3.625, 0.625, 2, 2.8630464152495065">
+      <DataClassMoniker Name="/PollContextDataContext/awPoll" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6541d47-c139-4210-9fa1-19ddb01b00ad" absoluteBounds="3.6399999999999997, 1.085, 1.9700000000000002, 2.3030464152495065" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 6.13044325240691); (4.0781225 : 6.13044325240691); (4.0781225 : 3.48804641524951)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PollContextDataContext/awSite_Poll/awSite_Poll_awPoll" />
+      <nodes>
+        <classShapeMoniker Id="3c21a5f8-1cf6-407f-afc1-7506e35b2cec" />
+        <classShapeMoniker Id="5b5a5d79-f784-4339-a798-2925c9eeed14" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="50746038-2395-4691-864a-e8711c65263f" absoluteBounds="5.5, 4.5, 2, 2.0554226513703662">
+      <DataClassMoniker Name="/PollContextDataContext/awPollChoice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="05386e71-fe71-46ea-b120-42bdf1ebef85" absoluteBounds="5.515, 4.96, 1.9700000000000002, 1.4954226513703663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.82031325 : 3.48804641524951); (4.82031325 : 5.31522162620345); (5.5 : 5.31522162620345)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PollContextDataContext/awPoll/awPoll_awPollChoice" />
+      <nodes>
+        <classShapeMoniker Id="5b5a5d79-f784-4339-a798-2925c9eeed14" />
+        <classShapeMoniker Id="50746038-2395-4691-864a-e8711c65263f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
